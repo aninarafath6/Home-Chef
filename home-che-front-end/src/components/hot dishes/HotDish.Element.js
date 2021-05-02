@@ -2,8 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 width:1304px;
-min-height:500px
+min-height:500px;
 /* background:red */
+
+@media(max-width:1304px){
+    width:100%;
+}
 `;
 export const Heading = styled.h1`
 /* Hot Dishes */
