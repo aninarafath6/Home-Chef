@@ -34,13 +34,13 @@ export default function Header() {
                     Home
                 </NavLi>
                 <NavLi>
-                    Home
+                    Orders
                 </NavLi>
                 <NavLi>
-                    Home
+                    Offers
                 </NavLi>
                 <NavLi>
-                    Home
+                    Sign in / Sign Up
                 </NavLi>
                 </NavUl>
             </HeaderContainer>

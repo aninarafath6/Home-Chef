@@ -14,7 +14,7 @@ justify-content:center;
 export const MainText = styled.h3`
 margin-top:15px;
 width: 367px;
-height: 131px;
+height: 75px;
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
@@ -24,6 +24,7 @@ line-height: 124.8%;
 margin-left: 39px;
 color: #ABBBC2;
 width:auto;
+margin-top: 190px;
 @media (max-width: 1440px) {
     font-size: 40px;
   }
