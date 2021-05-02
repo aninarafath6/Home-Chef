@@ -43,3 +43,26 @@ margin: 60px 15px;
     }
 
 `;
+export const HotDishContentArea = styled.div`
+    /* width: 100%; */
+    height: fit-content;
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 77px;
+    @media(max-width:480px){
+    justify-content:center;
+}
+`;
+export const DishContainer = styled.div`
+width:192px;
+height:260px;
+border-radius:16px;
+background-color:#1F1D2B;
+@media(max-width:480px){
+
+    width:15rem;
+}
+`;

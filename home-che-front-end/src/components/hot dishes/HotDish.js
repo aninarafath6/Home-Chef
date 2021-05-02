@@ -1,4 +1,9 @@
-import { Container, Heading } from "./HotDish.Element";
+import { 
+    Container, 
+    Heading,
+    HotDishContentArea,
+    DishContainer
+} from "./HotDish.Element";
 
 export default function HotDish() {
     return (
@@ -6,6 +11,15 @@ export default function HotDish() {
             <Heading>
                 Hot Dishes
             </Heading>
+            <HotDishContentArea>
+            <DishContainer></DishContainer>
+            <DishContainer></DishContainer>
+            <DishContainer></DishContainer>
+            <DishContainer></DishContainer>
+            <DishContainer></DishContainer>
+            
+
+            </HotDishContentArea>
         </Container>
     )
 }
