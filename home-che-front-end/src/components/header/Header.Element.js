@@ -119,4 +119,14 @@ border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 transition:.3s ease;
 `;
-export const NavLi =styled.li``;
+export const NavLi =styled.li`
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: normal;
+line-height: 25px;
+
+color: #ABBBC2;
+
+
+`;
