@@ -36,6 +36,7 @@ width:100%;
 height:auto;
 display:flex;
 flex-wrap:wrap;
+gap: 30px;
 @media (max-width: 665px) {
         justify-content:center;
         }
