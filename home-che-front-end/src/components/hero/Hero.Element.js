@@ -15,7 +15,7 @@ export const MainText = styled.h3`
 margin-top:15px;
 width: 367px;
 height: 75px;
-font-family: Roboto;
+font-family: 'Roboto';
 font-style: normal;
 font-weight: normal;
 font-size: 50px;

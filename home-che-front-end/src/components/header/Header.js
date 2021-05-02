@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import {
     Container,
     HeaderContainer,
@@ -11,6 +12,8 @@ import {
     SearchIcon,
     NavUl,
     NavLi,
+    LiContainer,
+    CartIconContainer
     
 } from './Header.Element';
 
@@ -27,9 +30,15 @@ export default function Header() {
                     <SearchIconContainer>
                         <SearchIcon src='/icons/searchIcon.svg' />
                     </SearchIconContainer>
-                    <SearchInput placeholder='Search for food ,coffe ,etc...' />
+                    <SearchInput placeholder='Search for food ,coffee ,etc...' />
                 </SearchContainer>
                 <NavUl status={status}>
+                <LiContainer>
+                <NavLi>
+                <CartIconContainer>
+                    <ShoppingCartIcon/>
+                </CartIconContainer>
+                </NavLi>
                 <NavLi>
                     Home
                 </NavLi>
@@ -42,6 +51,7 @@ export default function Header() {
                 <NavLi>
                     Sign in / Sign Up
                 </NavLi>
+                </LiContainer>
                 </NavUl>
             </HeaderContainer>
            

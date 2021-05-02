@@ -24,7 +24,7 @@ padding: 17px 110px;
    flex-direction:column;
    padding: 17px 26px;
   }
-  position:${props=>props.status ? 'absolute':'relative'};
+  position:${props => props.status ? 'absolute' : 'relative'};
   z-index:0;
 `;
 export const LogoContainer = styled.div`
@@ -96,9 +96,9 @@ top:0;
 left:0;
 bottom:0;
 `;
-export const NavUl =styled.ul`
-visibility:${props=>props.status ? 'visible':'hidden'};
-/* clip-path:${props=>props.status ? 'circle(5000px at 90% -10%)':'circle(100px at 90% -10%)'}; */
+export const NavUl = styled.ul`
+visibility:${props => props.status ? 'visible' : 'hidden'};
+/* clip-path:${props => props.status ? 'circle(5000px at 90% -10%)' : 'circle(100px at 90% -10%)'}; */
 position:fixed;
 height:100vh;
 width:100%;
@@ -117,16 +117,51 @@ backdrop-filter: blur( 8.5px );
 -webkit-backdrop-filter: blur( 8.5px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
-transition:.3s ease;
-`;
-export const NavLi =styled.li`
-
+transition:.3s ease;`;
+export const NavLi = styled.li`
 font-family: 'Roboto';
 font-style: normal;
 font-weight: normal;
 line-height: 25px;
+color: #ABBBC2;`;
+export  const LiContainer = styled.div`
+width:100%;
+height:80%;
+display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+`;
+export const CartIconContainer = styled.div`
+    width: 45px;
+    height: 44px;
+    background-color: #393C49;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ::after{
+      content: '1';
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #EA7C69;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(7px, -5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 29px;
+text-align: center;
 
-color: #ABBBC2;
-
-
+color: #FFFFFF;
+    }
 `;
