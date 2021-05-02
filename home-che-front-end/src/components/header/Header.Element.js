@@ -7,6 +7,8 @@ background-color:#252836;
 display:flex;
 align-items:center;
 justify-content:center;
+position: fixed;
+width:100%;
 
 @media (max-width: 768px) {
     min-height: 180px;
@@ -23,7 +25,7 @@ padding: 17px 110px;
    padding: 17px 26px;
   }
   position:${props=>props.status ? 'absolute':'relative'};
-  z-index:10;
+  z-index:0;
 `;
 export const LogoContainer = styled.div`
 display:flex;

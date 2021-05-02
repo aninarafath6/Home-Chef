@@ -29,8 +29,7 @@ export default function Header() {
                     </SearchIconContainer>
                     <SearchInput placeholder='Search for food ,coffe ,etc...' />
                 </SearchContainer>
-            </HeaderContainer>
-            <NavUl status={status}>
+                <NavUl status={status}>
                 <NavLi>
                     Home
                 </NavLi>
@@ -44,6 +43,8 @@ export default function Header() {
                     Home
                 </NavLi>
                 </NavUl>
+            </HeaderContainer>
+           
         </Container>
     )
 }
