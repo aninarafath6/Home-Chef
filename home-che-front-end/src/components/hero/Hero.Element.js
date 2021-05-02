@@ -14,7 +14,7 @@ justify-content:center;
 export const MainText = styled.h3`
 margin-top:15px;
 width: 367px;
-height: 75px;
+height: 100px;
 font-family: 'Roboto';
 font-style: normal;
 font-weight: normal;
