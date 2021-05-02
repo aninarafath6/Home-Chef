@@ -29,11 +29,14 @@ display:flex;
     margin-bottom: 30px;
     width: 100%;
   }
+  position:${props=>props.status ? 'absolute':'relative'};
+  z-index:10;
 `;
 export const MenuIconButton = styled.img`
 width:30px;
 /* height:30px; */
 cursor: pointer;
+
 `;
 export const LogoText = styled(Link)`
 /* Home Chef */
@@ -53,7 +56,7 @@ align-items:center;
 @media (max-width: 768px) {
     width:100%;
   }
-
+  margin-left: auto;
 `;
 export const SearchInput = styled.input`
 background:#2D303E;
@@ -84,3 +87,26 @@ border-right:none;
 border-radius: 8px 0 0px 8px;
 `;
 export const SearchIcon = styled.img``;
+export const OpenedHeaderPannal = styled.div`
+position:absolute;
+top:0;
+left:0;
+bottom:0;
+`;
+export const NavUl =styled.ul`
+visibility:${props=>props.status ? 'visible':'hidden'};
+/* clip-path:${props=>props.status ? 'circle(5000px at 90% -10%)':'circle(100px at 90% -10%)'}; */
+position:fixed;
+height:100vh;
+width:100%;
+/* background-color:red; */
+bottom: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    list-style: none;
+
+`;
+export const NavLi =styled.li``;

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
     Container,
     HeaderContainer,
@@ -8,15 +9,18 @@ import {
     SearchInput,
     SearchIconContainer,
     SearchIcon,
+    NavUl,
+    NavLi,
+    
 } from './Header.Element';
 
 export default function Header() {
- 
+    const [status,setStatus] =useState(false)
     return (
         <Container>
             <HeaderContainer>
-                <LogoContainer>
-                    <MenuIconButton src='/icons/menuIcon.svg' />
+                <LogoContainer status={status}>
+                    <MenuIconButton onClick={()=>setStatus(!status)} src='/icons/menuIcon.svg' />
                     <LogoText to="/">Home Chef</LogoText>
                 </LogoContainer>
                 <SearchContainer>
@@ -26,6 +30,20 @@ export default function Header() {
                     <SearchInput placeholder='Search for food ,coffe ,etc...' />
                 </SearchContainer>
             </HeaderContainer>
+            <NavUl status={status}>
+                <NavLi>
+                    Home
+                </NavLi>
+                <NavLi>
+                    Home
+                </NavLi>
+                <NavLi>
+                    Home
+                </NavLi>
+                <NavLi>
+                    Home
+                </NavLi>
+                </NavUl>
         </Container>
     )
 }
