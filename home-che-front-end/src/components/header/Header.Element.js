@@ -22,6 +22,8 @@ padding: 17px 110px;
    flex-direction:column;
    padding: 17px 26px;
   }
+  position:${props=>props.status ? 'absolute':'relative'};
+  z-index:10;
 `;
 export const LogoContainer = styled.div`
 display:flex;
@@ -29,8 +31,7 @@ display:flex;
     margin-bottom: 30px;
     width: 100%;
   }
-  position:${props=>props.status ? 'absolute':'relative'};
-  z-index:10;
+
 `;
 export const MenuIconButton = styled.img`
 width:30px;
@@ -114,5 +115,6 @@ backdrop-filter: blur( 8.5px );
 -webkit-backdrop-filter: blur( 8.5px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
+transition:.3s ease;
 `;
 export const NavLi =styled.li``;
