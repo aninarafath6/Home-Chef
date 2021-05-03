@@ -2,16 +2,9 @@ import {
     Container,
     Heading,
     HotDishContentArea,
-    DishContainer,
-    DishImageContainer,
-    DishContentContainer,
-    DisImage,
-    DishContent,
-    DishName,
-    DishPrice,
-    DishAvailability,
-    AddToCartButton
 } from "./HotDish.Element";
+import dishes from './dummyDishes'
+import DishItem from './DisItem'
 
 export default function HotDish() {
     return (
@@ -20,22 +13,14 @@ export default function HotDish() {
                 Hot Dishes
             </Heading>
             <HotDishContentArea>
-                <DishContainer>
-                    <DishImageContainer>
-                        <DisImage src='/images/Content-Image 5.png' />
-                    </DishImageContainer>
-                    <DishContentContainer>
-                    <DishContent>
-                    <DishName>Spicy seasoned seafood noodles</DishName>
-                    <DishPrice>$.2.29</DishPrice>
-                    <DishAvailability>20 Bowls available</DishAvailability>
-                    <AddToCartButton>Add To Cart</AddToCartButton>
-                    </DishContent>
-                    </DishContentContainer>
-                </DishContainer>
-
-
-
+           {
+               dishes.map((dish,key)=>{
+                   return(
+                       <DishItem dish={dish} key={key}/>
+                   )
+               })
+           }
+                   
             </HotDishContentArea>
         </Container>
     )

@@ -80,7 +80,10 @@
       transform: translateY(-111px);
   position: absolute;
   `;
-  export const DisImage = styled.img``;
+  export const DisImage = styled.img`
+        width:132px;
+      height:132px;
+  `;
   export const DishContentContainer = styled.div``;
     export const DishContent = styled.div`
   width: 140px;
