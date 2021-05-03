@@ -39,7 +39,7 @@ export default function Header() {
                 <NavUl status={status}>
                 <LiContainer>
                 <NavLi>
-                <NavLink onClick={closePannal} to='/'>
+                <NavLink onClick={closePannal} to='/cart'>
                 <CartIconContainer>
                     <ShoppingCartIcon/>
                 </CartIconContainer>
