@@ -9,6 +9,7 @@ align-items:center;
 justify-content:center;
 position: fixed;
 width:100%;
+z-index:10;
 
 @media (max-width: 768px) {
     min-height: 180px;
