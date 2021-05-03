@@ -11,6 +11,7 @@ export const Container = styled.div`
   width:100%;
   z-index:10;
 
+
   @media (max-width: 768px) {
       min-height: 180px;
     }
@@ -51,7 +52,7 @@ export const LogoText = styled(Link)`
   color: #FFFFFF;
   margin-left:25px;
   text-decoration:none;
-
+  z-index: 10;
 `;
 export const SearchContainer = styled.div`
   display:flex;
@@ -115,14 +116,16 @@ export const NavUl = styled.ul`
   -webkit-backdrop-filter: blur( 8.5px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
-  transition:.3s ease;`;
+  transition:.3s ease;
+  left:0;
+  `;
 export const NavLi = styled.li`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: normal;
   line-height: 25px;
   color: #ABBBC2;`;
-export  const LiContainer = styled.div`
+export const LiContainer = styled.div`
   width:100%;
   height:80%;
   display: flex;
