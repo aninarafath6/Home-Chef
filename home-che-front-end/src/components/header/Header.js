@@ -13,12 +13,16 @@ import {
     NavUl,
     NavLi,
     LiContainer,
-    CartIconContainer
+    CartIconContainer,
+    NavLink
     
 } from './Header.Element';
 
 export default function Header() {
     const [status,setStatus] =useState(false)
+    const closePannal =()=>{
+        setStatus(!status);
+    }
     return (
         <Container>
             <HeaderContainer>
@@ -35,21 +39,31 @@ export default function Header() {
                 <NavUl status={status}>
                 <LiContainer>
                 <NavLi>
+                <NavLink onClick={closePannal} to='/'>
                 <CartIconContainer>
                     <ShoppingCartIcon/>
                 </CartIconContainer>
+                </NavLink>
                 </NavLi>
                 <NavLi>
+                <NavLink onClick={closePannal} to='/'>
                     Home
+                </NavLink>
                 </NavLi>
                 <NavLi>
+                <NavLink onClick={closePannal} to='/orders'>
                     Orders
+                </NavLink>
                 </NavLi>
                 <NavLi>
+                <NavLink onClick={closePannal} to='/offers'>
                     Offers
+                </NavLink>
                 </NavLi>
                 <NavLi>
+                <NavLink onClick={closePannal} to='/signIn'>
                     Sign in / Sign Up
+                </NavLink>
                 </NavLi>
                 </LiContainer>
                 </NavUl>

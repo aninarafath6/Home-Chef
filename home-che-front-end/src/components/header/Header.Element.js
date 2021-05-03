@@ -166,3 +166,14 @@ text-align: center;
 color: #FFFFFF;
     }
 `;
+export const NavLink = styled(Link)`
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 25px;
+  color: #ABBBC2;
+  text-decoration:none;
+  :hover{
+    color:#EA7C69;
+  }
+  `;
