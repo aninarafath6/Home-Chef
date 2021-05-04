@@ -100,7 +100,7 @@ export const OpenedHeaderPannal = styled.div`
 export const NavUl = styled.ul`
   visibility:${props => props.status ? 'visible' : 'hidden'};
   position:fixed;
-  height:100vh;
+  height:100%;
   width:100%;
   bottom: 0;
         margin: 0;
@@ -118,6 +118,7 @@ export const NavUl = styled.ul`
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   transition:.3s ease;
   left:0;
+  bottom:0;
   `;
 export const NavLi = styled.li`
   font-family: 'Roboto';

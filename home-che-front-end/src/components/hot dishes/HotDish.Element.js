@@ -4,8 +4,8 @@
   export const Container = styled.div`
   width:1304px;
   min-height:500px;
-  /* background:red */
-
+  margin:0 auto;
+  padding: 5px 28px 0px;
   @media(max-width:1304px){
       width:100%;
   }
@@ -48,16 +48,17 @@
         /* width: 100%; */
         height: fit-content;
         padding: 10px;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 77px;
         margin-top: 125px;
-        @media(max-width:480px){
-        justify-content:center;
-  }
-
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      grid-column-gap: 17px;
+      grid-row-gap: 85px;
+        @media screen and (max-width:1024px){
+        grid-template-columns:repeat(4,1fr);
+        }     
+        @media screen and (max-width:768px){
+        grid-template-columns:repeat(3,1fr);
+        } 
   `;
   export const DishContainer = styled.div`
     width:192px;
