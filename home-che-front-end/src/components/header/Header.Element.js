@@ -11,7 +11,7 @@ export const Container = styled.div`
   width:100%;
   z-index:10;
 
-
+width:auto;
   @media (max-width: 768px) {
       min-height: 180px;
     }
