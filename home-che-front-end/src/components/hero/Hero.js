@@ -7,10 +7,8 @@ import {
     MenuContainer
 } from "./Hero.Element";
 
-
+import dummyMenu from './dummyMenu'
 export default function Hero() {
-    let [arr,setArr] =useState([{},{},{},{}])
-    
     return (
         <HeroContainer>
             <Container>
@@ -19,10 +17,10 @@ export default function Hero() {
                     {/* //we need menu item display */}
 
                         {
-                            arr.map((key,i)=>{
+                            dummyMenu.map((menu,i)=>{
 
                                return(
-                                <ShortMenu key={i}/>
+                                <ShortMenu menu={menu} key={i}/>
                                )
                             })
                         }

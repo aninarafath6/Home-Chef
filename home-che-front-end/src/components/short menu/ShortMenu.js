@@ -6,14 +6,15 @@ import {
     MenuText
 } from "./ShortMenu.Element";
 
-export default function ShortMenu() {
+export default function ShortMenu({menu}) {
+    let {name,imageURL}=menu;
     return (
         <Container>
             <MenuImageSection>
-                <MenuImage src='/images/ContentImage.png' />
+                <MenuImage src={imageURL} />
             </MenuImageSection>
             <MenuContentSection>
-                <MenuText>Spicy Seasoned Seafood Noodles</MenuText>
+                <MenuText>{name}</MenuText>
             </MenuContentSection>
         </Container>
     )
