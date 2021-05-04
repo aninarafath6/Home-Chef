@@ -11,7 +11,7 @@ export const Container = styled.div`
   width:100%;
   z-index:10;
 
-width:auto;
+
   @media (max-width: 768px) {
       min-height: 180px;
     }
@@ -76,7 +76,7 @@ export const SearchInput = styled.input`
       width:200px;
     }
     @media (max-width: 768px) {
-      width:100%;
+      width:78%;
     }
 `;
 export const SearchIconContainer = styled.div`

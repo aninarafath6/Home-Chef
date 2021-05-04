@@ -24,3 +24,6 @@ body::-webkit-scrollbar-thumb
   border-radius:10px;
 	background-color: #ea7c69;;
 }
+#root{
+  overflow:hidden;
+}
