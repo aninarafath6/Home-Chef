@@ -77,6 +77,9 @@
     @media screen and (max-width:1024px){
       height:485px;
         }  
+        @media screen and (max-width:1024px){
+      width: 88%;
+        } 
   `;
   export const DishImageContainer = styled.div`
       width:155px;
