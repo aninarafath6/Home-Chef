@@ -8,7 +8,7 @@ border-radius:16px;
 display:flex;
 margin-left: 16px;
 margin-top: 16px;
-    
+overflow:hidden;
     @media screen and (max-width:834px){
         height:170px;
         width:90%;
