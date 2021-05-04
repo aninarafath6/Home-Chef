@@ -9,7 +9,7 @@ display:flex;
 margin-left: 16px;
 margin-top: 16px;
     
-    @media screen and (max-width:768px){
+    @media screen and (max-width:834px){
         height:170px;
         width:90%;
 
@@ -35,8 +35,8 @@ justify-content:center;
 `;
 export const MenuImage = styled.img`
 width:101px;
-@media screen and (max-width:768px){
-    width:125px;
+@media screen and (max-width:864px){
+    width:110px;
 
         } 
         

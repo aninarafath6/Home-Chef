@@ -56,7 +56,7 @@
         @media screen and (max-width:1024px){
         grid-template-columns:repeat(3,1fr);
         }     
-        @media screen and (max-width:768px){
+        @media screen and (max-width:834px){
         grid-template-columns:repeat(2,1fr);
         } 
         @media screen and (max-width:425px){

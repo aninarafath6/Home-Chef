@@ -29,7 +29,7 @@ margin-top: 190px;
     font-size: 40px;
   }
   @media (max-width: 425px) {
-    font-size: 25px;
+    font-size: 33px;
   }
 `;
 export  const MenuContainer = styled.div`
@@ -37,8 +37,9 @@ height:auto;
 display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
-    @media screen and (max-width:768px){
+    @media screen and (max-width:834px){
         grid-template-columns:repeat(2,1fr);
+        gap: 5px;
         } 
         @media screen and (max-width:425px){
         grid-template-columns:repeat(1,1fr);
