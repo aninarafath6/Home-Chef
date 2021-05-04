@@ -4,8 +4,8 @@
   export const Container = styled.div`
   width:1304px;
   min-height:500px;
-  /* background:red */
-
+  margin:0 auto;
+  padding: 5px 28px 0px;
   @media(max-width:1304px){
       width:100%;
   }
