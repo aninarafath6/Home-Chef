@@ -48,63 +48,79 @@
         /* width: 100%; */
         height: fit-content;
         padding: 10px;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 77px;
         margin-top: 125px;
-        @media(max-width:480px){
-        justify-content:center;
-  }
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      grid-column-gap: 17px;
+      grid-row-gap: 85px;
+        @media screen and (max-width:1024px){
+        grid-template-columns:repeat(3,1fr);
+        }     
+        @media screen and (max-width:768px){
+        grid-template-columns:repeat(2,1fr);
+        } 
+        @media screen and (max-width:425px){
+        grid-template-columns:repeat(1,1fr);
+        grid-row-gap: 121px;
+        } 
 
   `;
   export const DishContainer = styled.div`
-    width:192px;
-    height:260px;
+     width:100%;
+    height:310px;
     border-radius:16px;
     background-color:#1F1D2B;
     display:flex;
     align-items:center;
     justify-content:center;
     flex-direction: column;
-  @media(max-width:480px){
-
-      width:15rem;
-  }
+    @media screen and (max-width:1024px){
+      height:485px;
+        }  
   `;
   export const DishImageContainer = styled.div`
-      width:132px;
-      height:132px;
-      /* background-color:red; */
-      transform: translateY(-111px);
-  position: absolute;
+      width:155px;
+      height:155px;
+      transform: translateY(-121px);
+      position: absolute;
+      @media screen and (max-width:1024px){
+      width:220px;
+      height:220px;
+      transform: translateY(-211px);
+        }  
   `;
   export const DisImage = styled.img`
-        width:132px;
-      height:132px;
+        width:100%;
+        height:100%;
   `;
-  export const DishContentContainer = styled.div``;
-    export const DishContent = styled.div`
-  width: 140px;
-  height: 130px;
-  margin-top: 79px;
+  export const DishContentContainer = styled.div`
   display:flex;
+  align-items:center;
   justify-content:center;
-  text-align:center;
-  flex-direction:column
-  `;
-  export const DishName = styled.p`
-      /* Spicy seasoned seafood noodles */
-      font-family: Barlow;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 130%;
-      /* or 18px */
-      text-align: center;
-      color: #FFFFFF;
-    `;
+`;
+export const DishContent = styled.div`
+width:80%;
+height: 130px;
+margin-top: 79px;
+display:flex;
+justify-content:center;
+text-align:center;
+flex-direction:column;
+`;
+export const DishName = styled.p`
+  /* Spicy seasoned seafood noodles */
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  /* or 18px */
+  text-align: center;
+  color: #FFFFFF;
+  @media screen and (max-width:1024px){
+    font-size: 25px;
+    }   
+`;
 
 export const DishPrice = styled.p`
 /* $ 2.29 */
@@ -118,7 +134,9 @@ line-height: 140%;
 text-align: center;
 margin-top: 0;
 color: #FFFFFF;
-
+@media screen and (max-width:1024px){
+    font-size: 28px;
+    }  
 `;
 export const DishAvailability =styled.p`
 /* 20 Bowls available */
@@ -130,14 +148,20 @@ line-height: 140%;
 /* identical to box height, or 20px */
 text-align: center;
 margin-top: 0;
-color: #ABBBC2;`;
+color: #ABBBC2;
+@media screen and (max-width:1024px){
+    font-size: 20px;
+    }  `;
 export const AddToCartButton = styled(Button)`
 &&&{
-  background: #2D303E;
+background: #2D303E;
 border-radius: 4px;
 outline:none;
 border:none;
 padding:1px;
 color:#fff;
+@media screen and (max-width:1024px){
+    padding:9px
+    }  
 }
 `;
