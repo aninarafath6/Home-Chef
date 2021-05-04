@@ -12,7 +12,7 @@ justify-content:center;
 
 `;
 export const MainText = styled.h3`
-margin-top:15px;
+margin-top:20px;
 width: 367px;
 height: 100px;
 font-family: 'Roboto';
@@ -24,7 +24,6 @@ line-height: 124.8%;
 margin-left: 39px;
 color: #ABBBC2;
 width:auto;
-margin-top: 190px;
 @media (max-width: 1440px) {
     font-size: 40px;
   }
