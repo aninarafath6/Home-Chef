@@ -47,7 +47,6 @@
   export const HotDishContentArea = styled.div`
         /* width: 100%; */
         height: fit-content;
-        padding: 10px;
         margin-top: 125px;
       display:grid;
       grid-template-columns:repeat(5,1fr);
