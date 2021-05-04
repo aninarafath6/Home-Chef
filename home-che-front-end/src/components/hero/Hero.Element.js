@@ -33,17 +33,14 @@ margin-top: 190px;
   }
 `;
 export  const MenuContainer = styled.div`
-width:100%;
 height:auto;
 display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
-    padding: 5px 10px 0px;
     @media screen and (max-width:768px){
         grid-template-columns:repeat(2,1fr);
         } 
         @media screen and (max-width:425px){
         grid-template-columns:repeat(1,1fr);
-        width:98%;
         } 
 `;

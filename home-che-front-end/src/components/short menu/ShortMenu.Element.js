@@ -9,7 +9,7 @@ display:flex;
 margin-left: 16px;
 margin-top: 16px;
     
-    @media screen and (max-width:425px){
+    @media screen and (max-width:768px){
         height:170px;
         } 
 `;
@@ -33,10 +33,11 @@ justify-content:center;
 `;
 export const MenuImage = styled.img`
 width:101px;
-@media screen and (max-width:425px){
+@media screen and (max-width:768px){
     width:125px;
 
         } 
+        
 `;
 export const MenuText = styled.p`
 /* Spicy Seasoned Seafood Noodles */
@@ -49,7 +50,7 @@ line-height: 130%;
 /* or 22px */
 
 color: #FFFFFF;
-@media screen and (max-width:425px){
+@media screen and (max-width:768px){
     font-size: 19px;
 
 
