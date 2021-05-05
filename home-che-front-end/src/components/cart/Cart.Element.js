@@ -15,7 +15,7 @@ width:90%;
     /* on tablet device */
     @media screen and (max-width:768px){
         width:90%;
-        flex-direction:row;
+        flex-direction:column;
     }
     /* on small device */
     @media screen and (max-width:425px){
@@ -27,15 +27,16 @@ width:90%;
 `;
 
 export const CartItemSection = styled.div`
-    width:60%;
-    min-height:150px;
+    width:100%;
+    min-height:200px;
     display:flex;
     flex-direction:column;
     gap:10px;
 
     /* on tablet device */
     @media screen and (max-width:768px){
-        width:60%;
+        width:100%;
+        min-height:200px;
     }
     /* on mobile large device */
     @media screen and (max-width:425px){
@@ -76,6 +77,10 @@ export const CartItemContainer = styled.div`
         height:150px;
         border-radius:10px;
         display:flex;
+        @media screen and (max-width:768px){
+            height:180px;
+    
+        }
 `;
 export const ItemImageSection = styled.div`
     /* background-color:cyan; */
@@ -93,6 +98,10 @@ export const ItemContentSection = styled.div`
 `;
 export const ItemImage = styled.img`
     width:115px;
+    @media screen and (max-width:768px){
+        width:130px;
+    
+        }
 `;
 export const ItemName = styled.p`
         color:#ABBBC2;
@@ -115,14 +124,30 @@ width:100%;
 height:25px;
 display:flex;
 justify-content:space-between;
+    @media screen and (max-width:1080px){
+justify-content:space-around;
+        
+
+    }
 `;
 
 export const RemoveItemBtn = styled(Button)`
 &&&{
-    /* width:15px; */
     background-color:#2D303E;
     color:#ABBBC2;
     font-size:10px;
+    @media screen and (max-width:1080px){
+    justify-content:space-around;
+    font-size:12px;
+    }
+}
+@media screen and (max-width:768px){
+        &&&{
+    font-size:15px;
+    padding:10px ;
+
+        }
+    
 }
 `;
 export const RemoveIcon = styled(DeleteIcon)`
@@ -142,8 +167,8 @@ export const QuantityDisplay = styled.div`
     justify-content:center;
     border-radius:5px;
     margin-right:5px;
-    @media screen and (max-width:425px){
-        margin-right:10px;
+    @media screen and (max-width:768px){
+        margin-right:15px;
 
     }
     
@@ -157,7 +182,6 @@ color:#ABBBC2;
 
 `;
 export const QuantityDecrement =styled.span`
-margin-left:5px;
 cursor:pointer;
 color:#ABBBC2;
 
