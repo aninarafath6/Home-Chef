@@ -81,7 +81,7 @@ export const CartItemContainer = styled.div`
             height:180px;
     
         }
-        @media screen and (max-width:360px){
+        @media screen and (max-width:425px){
             height:145px;
     
         }
@@ -106,10 +106,14 @@ export const ItemImage = styled.img`
         width:130px;
     
         }
-        @media screen and (max-width:360px){
+        @media screen and (max-width:425px){
         width:111px;
     
         }
+        /* @media screen and (max-width:360px){
+        width:111px;
+    
+        } */
 `;
 export const ItemName = styled.p`
         color:#ABBBC2;
