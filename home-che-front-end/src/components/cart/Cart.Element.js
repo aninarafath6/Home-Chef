@@ -141,7 +141,11 @@ export const QuantityDisplay = styled.div`
     align-items:center;
     justify-content:center;
     border-radius:5px;
-margin-right:5px;
+    margin-right:5px;
+    @media screen and (max-width:425px){
+        margin-right:10px;
+
+    }
     
 `;
 export const Quantity = styled.span `
