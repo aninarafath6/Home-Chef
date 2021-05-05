@@ -11,6 +11,9 @@ height:auto;
 display:flex;
 gap:25px;
 width:90%;   
+@media screen and (min-width:768px){
+        width:65%;
+    }
     
     /* on tablet device */
     @media screen and (max-width:768px){
@@ -77,10 +80,11 @@ export const CartItemContainer = styled.div`
         height:150px;
         border-radius:10px;
         display:flex;
-        @media screen and (max-width:768px){
+            height:180px;
+        /* @media screen and (max-width:768px){
             height:180px;
     
-        }
+        } */
         @media screen and (max-width:425px){
             height:145px;
     
@@ -101,11 +105,11 @@ export const ItemContentSection = styled.div`
     padding:5px;
 `;
 export const ItemImage = styled.img`
-    width:115px;
-    @media screen and (max-width:768px){
-        width:130px;
+    width:150px;
+    /* @media screen and (max-width:768px){
+        width:150px;
     
-        }
+        } */
         @media screen and (max-width:425px){
         width:111px;
     
@@ -117,14 +121,22 @@ export const ItemImage = styled.img`
 `;
 export const ItemName = styled.p`
         color:#ABBBC2;
+        font-size:18px;
 
+        /* @media screen and (max-width:768px){
+        font-size:18px;
+    } */
     @media screen and (max-width:425px){
         font-size:12px;
     }
 `;
 export const ItemPrice = styled.p`
         color:#ABBBC2;
+        font-size:16px;
 
+        @media screen and (max-width:768px){
+        font-size:12px;
+    }
     @media screen and (max-width:425px){
         font-size:12px;
     }
@@ -135,7 +147,7 @@ export const ItemActionArea = styled.div`
 width:100%;
 height:25px;
 display:flex;
-justify-content:space-between;
+justify-content:space-around;
 margin-top:15px;
     @media screen and (max-width:1080px){
     justify-content:space-around;
@@ -143,7 +155,7 @@ margin-top:15px;
 
     }
     @media screen and (max-width:360px){
-    justify-content:space-between;
+    justify-content:space-around;
     }
 `;
 
@@ -151,7 +163,8 @@ export const RemoveItemBtn = styled(Button)`
 &&&{
     background-color:#2D303E;
     color:#ABBBC2;
-    font-size:10px;
+    font-size:15px;
+    padding:10px ;
     @media screen and (max-width:1080px){
     justify-content:space-around;
     font-size:12px;
