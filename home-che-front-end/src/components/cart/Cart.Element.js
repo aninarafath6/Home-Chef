@@ -81,6 +81,10 @@ export const CartItemContainer = styled.div`
             height:180px;
     
         }
+        @media screen and (max-width:360px){
+            height:145px;
+    
+        }
 `;
 export const ItemImageSection = styled.div`
     /* background-color:cyan; */
@@ -100,6 +104,10 @@ export const ItemImage = styled.img`
     width:115px;
     @media screen and (max-width:768px){
         width:130px;
+    
+        }
+        @media screen and (max-width:360px){
+        width:111px;
     
         }
 `;
@@ -124,10 +132,14 @@ width:100%;
 height:25px;
 display:flex;
 justify-content:space-between;
+margin-top:15px;
     @media screen and (max-width:1080px){
-justify-content:space-around;
+    justify-content:space-around;
         
 
+    }
+    @media screen and (max-width:360px){
+    justify-content:space-between;
     }
 `;
 

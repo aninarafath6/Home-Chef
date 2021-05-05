@@ -22,7 +22,7 @@ export default function CartItem() {
                 <ItemName>Spicy seasoned seafood noodles</ItemName>
                 <ItemPrice>₹.50</ItemPrice>
                 <ItemActionArea>
-                    <RemoveItemBtn><RemoveIcon />  Remove</RemoveItemBtn>
+                    <RemoveItemBtn><RemoveIcon /> </RemoveItemBtn>
                     <QuantityContainer>
                     <QuantityIncrement>+</QuantityIncrement>
                         <QuantityDisplay>
