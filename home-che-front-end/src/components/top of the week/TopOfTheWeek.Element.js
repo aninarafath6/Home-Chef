@@ -95,6 +95,10 @@
   export const DisImage = styled.img`
         width:100%;
         height:100%;
+        transition:all ease 1s;
+        :hover{
+          transform: rotate(45deg);
+        }
   `;
   export const DishContentContainer = styled.div`
   display:flex;

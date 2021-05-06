@@ -64,7 +64,7 @@ export const SearchContainer = styled.div`
 `;
 export const SearchInput = styled.input`
   background:#2D303E;
-  width:391px;
+  width:221px;
   height:47px;
   outline:none;
   border:1px solid #393C49;
@@ -72,11 +72,20 @@ export const SearchInput = styled.input`
   color:#ABBBC2;
   padding: 3px 21px;
   border-left: none;
+  transition:all ease .8s;
   @media (max-width: 1024px) {
       width:200px;
     }
     @media (max-width: 768px) {
       width:78%;
+      
+    }
+    :focus{
+      width:321px;
+      @media (max-width: 768px) {
+      width:78%;
+      
+    }
     }
 `;
 export const SearchIconContainer = styled.div`

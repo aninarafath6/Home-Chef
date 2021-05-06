@@ -35,6 +35,10 @@ justify-content:center;
 `;
 export const MenuImage = styled.img`
 width:101px;
+transition:all ease 1s;
+        :hover{
+          transform: rotate(45deg);
+        }
 @media screen and (max-width:864px){
     width:110px;
 

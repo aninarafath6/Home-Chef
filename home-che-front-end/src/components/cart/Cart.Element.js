@@ -156,6 +156,10 @@ export const ItemContentSection = styled.div`
 `;
 export const ItemImage = styled.img`
     width:150px;
+    transition:all ease 1s;
+        :hover{
+          transform: rotate(45deg);
+        }
     /* @media screen and (max-width:768px){
         width:150px;
     

@@ -4,15 +4,15 @@ export default [
         imageURL:'/images/Content-Image 3.png'
     },
     {
-        name:'Spicy seasoned seafood noodles',
+        name:'Salted Pasta with mushroom sauce',
         imageURL:'/images/Content-Image 5.png'
     },
     {
-        name:'Spicy seasoned seafood noodles',
+        name:'Beef dumpling in hot and sour soup',
         imageURL:'/images/Content-Images.png'
     },
     {
-        name:'Spicy seasoned seafood noodles',
+        name:'Hot spicy fried rice with omelet',
         imageURL:'/images/ContentImage.png'
     },
 ]
