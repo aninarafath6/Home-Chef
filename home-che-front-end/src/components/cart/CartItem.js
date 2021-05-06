@@ -9,10 +9,8 @@ import {
     RemoveItemBtn,
     RemoveIcon,
     QuantityContainer,
-    QuantityDisplay,
     Quantity,
-    QuantityIncrement,
-    QuantityDecrement
+    QuantityOption
 } from './Cart.Element';
 export default function CartItem() {
     return (
@@ -24,7 +22,14 @@ export default function CartItem() {
                 <ItemActionArea>
                     <RemoveItemBtn><RemoveIcon /> </RemoveItemBtn>
                     <QuantityContainer>
-                    CustomizedSelects
+                        <Quantity name='quantity'>
+                        <QuantityOption value="1"> 1</QuantityOption>
+                        <QuantityOption value="2"> 2</QuantityOption>
+                        <QuantityOption value="3"> 3</QuantityOption>
+                        <QuantityOption value="4"> 4</QuantityOption>
+
+                        </Quantity>
+                       
                     </QuantityContainer>
                 </ItemActionArea>
             </ItemContentSection>

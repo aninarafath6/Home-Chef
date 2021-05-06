@@ -190,32 +190,23 @@ width:15px;
 export const QuantityContainer = styled.div`
 display:flex;
 `;
-export const QuantityDisplay = styled.div`
-    width:35px;
-    height:25px;
-    background-color:#2D303E;
-    padding:1px 3;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:5px;
-    margin-right:5px;
-    @media screen and (max-width:834px){
-        margin-right:15px;
 
+export const Quantity = styled.select `
+background-color: #2D303E;
+    color: #abbbc2;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0px 8px;
+    border: none;
+    width: 49px;
+    height: 28px;
+    outline:none;
+`;
+export const QuantityOption = styled.option`
+color:#EA7C69;
+outline:none;
+border:none;
+    :hover{
+        background-color:#EA7C69;
     }
-    
-`;
-export const Quantity = styled(Button) `
-color:#EA7C69;`;
-export const QuantityIncrement =styled.span`
-margin-right:5px;
-cursor:pointer;
-color:#ABBBC2;
-
-`;
-export const QuantityDecrement =styled(Button)`
-cursor:pointer;
-color:#ABBBC2;
-
 `;
