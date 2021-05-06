@@ -52,15 +52,16 @@ export const CartItemSection = styled.div`
 export const CartPriceSection = styled.div`
     background:#1F1D2B;
     width:40%;
-    height:250px;
+    height:265px;
     border-radius:10px;
-
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 
     /* on tablet device */
    @media screen and (max-width:834px){
         width:40%;
         height:250px;
-        flex-direction:row;
    }
     /* on mobile large device */
     @media screen and (max-width:425px){
@@ -68,7 +69,53 @@ export const CartPriceSection = styled.div`
         height:250px;
     }
 `;
+export const HeadingPrice = styled.h2`
+/* Total Amount.₹1618 */
+font-family: Barlow;
+font-style: normal;
+font-weight: 500;
+font-size: 25px;
+line-height: 140%;
+/* identical to box height, or 35px */
+text-align: center;
+color: #F7FCFF;
+margin-bottom: 2px;
 
+
+`;
+export const PriceDetailContainer = styled.div`
+width:80%;
+height:60%;
+/* background:red; */
+border-top: 4px solid #EA7C69;
+padding-top:8px;
+
+`;
+
+export const PriceDetail = styled.h6 `
+/* Offer Price */
+
+display:flex;
+justify-content:space-between;
+font-family: Barlow;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 140%;
+/* identical to box height, or 27px */
+margin:15px;
+color: #ABBBC2;
+
+
+`;
+
+export const CheckoutButton = styled(Button)`
+    width: 100%;
+    &&&{
+    background: #2D303E;
+    color:#ABBBC2;
+    }
+    `;
 
 
 
