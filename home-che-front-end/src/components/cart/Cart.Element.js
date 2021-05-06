@@ -206,7 +206,7 @@ export const QuantityDisplay = styled.div`
     }
     
 `;
-export const Quantity = styled.span `
+export const Quantity = styled(Button) `
 color:#EA7C69;`;
 export const QuantityIncrement =styled.span`
 margin-right:5px;
@@ -214,7 +214,7 @@ cursor:pointer;
 color:#ABBBC2;
 
 `;
-export const QuantityDecrement =styled.span`
+export const QuantityDecrement =styled(Button)`
 cursor:pointer;
 color:#ABBBC2;
 

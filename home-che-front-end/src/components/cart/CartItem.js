@@ -24,11 +24,7 @@ export default function CartItem() {
                 <ItemActionArea>
                     <RemoveItemBtn><RemoveIcon /> </RemoveItemBtn>
                     <QuantityContainer>
-                    <QuantityIncrement>+</QuantityIncrement>
-                        <QuantityDisplay>
-                          <Quantity>01</Quantity>
-                        </QuantityDisplay>
-                        <QuantityIncrement>-</QuantityIncrement>
+                    CustomizedSelects
                     </QuantityContainer>
                 </ItemActionArea>
             </ItemContentSection>
