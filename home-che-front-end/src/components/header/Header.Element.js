@@ -196,7 +196,8 @@ export const NavLink = styled(Link)`
     left: 0;
     top: 0;
     position: absolute;
-    margin: 47px;
+    margin: 41px 107px;
+
   `;
 
 
