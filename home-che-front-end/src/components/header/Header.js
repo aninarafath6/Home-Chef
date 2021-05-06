@@ -14,9 +14,11 @@ import {
     NavLi,
     LiContainer,
     CartIconContainer,
-    NavLink
+    NavLink,
+    NavCloseButton
     
 } from './Header.Element';
+import { Dialog } from '@material-ui/core';
 
 export default function Header() {
     const [status,setStatus] =useState(false)
@@ -36,7 +38,9 @@ export default function Header() {
                     </SearchIconContainer>
                     <SearchInput placeholder='Search for food ,coffee ,etc...' />
                 </SearchContainer>
-                <NavUl status={status}>
+               <Dialog open={status}>
+               <NavUl>
+               <NavCloseButton onClick={()=>setStatus(!status)} src='/icons/menuIcon.svg' />
                 <LiContainer>
                 <NavLi>
                 <NavLink onClick={closePannal} to='/cart'>
@@ -67,6 +71,7 @@ export default function Header() {
                 </NavLi>
                 </LiContainer>
                 </NavUl>
+               </Dialog>
             </HeaderContainer>
            
         </Container>

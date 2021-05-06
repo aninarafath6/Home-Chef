@@ -15,6 +15,12 @@ export default function Cart() {
             <CartItemSection>
                 <CartItem />
                 <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+
 
             </CartItemSection>
             <CartPriceSection>

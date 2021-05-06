@@ -98,7 +98,6 @@ export const OpenedHeaderPannal = styled.div`
   bottom:0;
 `;
 export const NavUl = styled.ul`
-  visibility:${props => props.status ? 'visible' : 'hidden'};
   position:fixed;
   height:100%;
   width:100%;
@@ -119,6 +118,13 @@ export const NavUl = styled.ul`
   transition:.3s ease;
   left:0;
   bottom:0;
+
+  ::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+  }
   `;
 export const NavLi = styled.li`
   font-family: 'Roboto';
@@ -176,5 +182,21 @@ export const NavLink = styled(Link)`
   text-decoration:none;
   :hover{
     color:#EA7C69;
+    
   }
   `;
+
+  export const NavCloseButton= styled.img`
+    width:30px;
+  cursor: pointer;
+  z-index:10;
+      width: 30px;
+    cursor: pointer;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    position: absolute;
+    margin: 47px;
+  `;
+
+
