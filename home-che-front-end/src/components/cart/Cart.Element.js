@@ -10,13 +10,13 @@ margin:0 auto;
 height:auto;
 display:flex;
 gap:25px;
-width:90%;   
-@media screen and (min-width:768px){
-        width:65%;
+width:1260px;   
+
+    @media screen and (max-width:1300px){
+        width:970px;
     }
-    
     /* on tablet device */
-    @media screen and (max-width:768px){
+    @media screen and (max-width:834px){
         width:90%;
         flex-direction:column;
     }
@@ -37,7 +37,7 @@ export const CartItemSection = styled.div`
     gap:10px;
 
     /* on tablet device */
-    @media screen and (max-width:768px){
+    @media screen and (max-width:834px){
         width:100%;
         min-height:200px;
     }
@@ -57,7 +57,7 @@ export const CartPriceSection = styled.div`
 
 
     /* on tablet device */
-   @media screen and (max-width:768px){
+   @media screen and (max-width:834px){
         width:40%;
         height:250px;
         flex-direction:row;
@@ -102,7 +102,10 @@ export const ItemContentSection = styled.div`
     /* background-color:blanchedalmond; */
     width:55%;
     height:100%;
-    padding:5px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap:14px;
 `;
 export const ItemImage = styled.img`
     width:150px;
@@ -122,23 +125,25 @@ export const ItemImage = styled.img`
 export const ItemName = styled.p`
         color:#ABBBC2;
         font-size:18px;
+        margin:0;
 
         /* @media screen and (max-width:768px){
         font-size:18px;
     } */
     @media screen and (max-width:425px){
-        font-size:12px;
+        font-size:14px;
     }
 `;
 export const ItemPrice = styled.p`
         color:#ABBBC2;
         font-size:16px;
+        margin:0;
 
-        @media screen and (max-width:768px){
+        @media screen and (max-width:834px){
         font-size:12px;
     }
     @media screen and (max-width:425px){
-        font-size:12px;
+        font-size:14px;
     }
 `;
 
@@ -148,7 +153,6 @@ width:100%;
 height:25px;
 display:flex;
 justify-content:space-around;
-margin-top:15px;
     @media screen and (max-width:1080px){
     justify-content:space-around;
         
@@ -170,7 +174,7 @@ export const RemoveItemBtn = styled(Button)`
     font-size:12px;
     }
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:834px){
         &&&{
     font-size:15px;
     padding:10px ;
@@ -196,7 +200,7 @@ export const QuantityDisplay = styled.div`
     justify-content:center;
     border-radius:5px;
     margin-right:5px;
-    @media screen and (max-width:768px){
+    @media screen and (max-width:834px){
         margin-right:15px;
 
     }
