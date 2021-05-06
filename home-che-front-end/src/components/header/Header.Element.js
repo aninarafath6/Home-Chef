@@ -113,18 +113,11 @@ export const NavUl = styled.ul`
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 8.5px );
   -webkit-backdrop-filter: blur( 8.5px );
-  border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   transition:.3s ease;
   left:0;
   bottom:0;
-
-  ::before{
-    content: '';
-    position: absolute;
-    top:0;
-    left:0;
-  }
+  padding:0;
   `;
 export const NavLi = styled.li`
   font-family: 'Roboto';
