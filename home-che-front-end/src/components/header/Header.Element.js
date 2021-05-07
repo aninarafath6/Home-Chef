@@ -198,10 +198,11 @@ export const NavLink = styled(Link)`
     left: 0;
     top: 0;
     position: absolute;
-    margin: 41px 107px;
+    margin: 36px 109px;
+
 
 @media screen and (max-width:768px){
-  margin: 40px 30px;
+  margin: 34px 25px;
 }
   `;
 

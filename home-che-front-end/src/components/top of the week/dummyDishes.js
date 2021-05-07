@@ -6,21 +6,21 @@ export default [
         imageURL:'/images/Content-Image 3.png'
     },
     {
-        name:'Spicy seasoned seafood noodles',
-        price:'120',
-        availability: 20,
+        name:'Salted Pasta with mushroom sauce',
+        price:'150',
+        availability: 10,
         imageURL:'/images/Content-Image 5.png'
     },
     {
-        name:'Spicy seasoned seafood noodles',
-        price:'110',
-        availability: 20,
+        name:'Beef dumpling in hot and sour soup',
+        price:'50',
+        availability: 30,
         imageURL:'/images/Content-Images.png'
     },
     {
-        name:'Spicy seasoned seafood noodles',
-        price:'120',
-        availability: 20,
+        name:'Hot spicy fried rice with omelet',
+        price:'100',
+        availability: 5,
         imageURL:'/images/ContentImage.png'
     },
     {
@@ -30,13 +30,13 @@ export default [
         imageURL:'/images/Content-Image 3.png'
     },
     {
-        name:'Spicy seasoned seafood noodles',
-        price:'170',
-        availability: 20,
+        name:'Beef dumpling in hot and sour soup',
+        price:'180',
+        availability: 1,
         imageURL:'/images/Content-Images.png'
     },
     {
-        name:'Spicy seasoned seafood noodles',
+        name:'Hot spicy fried rice with omelet',
         price:'190',
         availability: 20,
         imageURL:'/images/ContentImage.png'

@@ -9,19 +9,21 @@ import {
     CheckoutButton
 } from './Cart.Element';
 
+import dummyDishes from './dummyDishes'
+
 export default function Cart() {
     return (
         <Container>
             <CartItemSection>
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
+               {
+                dummyDishes.map((dish,key)=>{
+                    return(
 
-
+                        <CartItem dish={dish} key={key}/>
+                    )
+                })
+               }
+                
             </CartItemSection>
             <CartPriceSection>
                 <HeadingPrice>Total Amount.₹1618</HeadingPrice>

@@ -12,13 +12,14 @@ import {
     Quantity,
     QuantityOption
 } from './Cart.Element';
-export default function CartItem() {
+export default function CartItem({dish}) {
+    const {name,price,imageURL}= dish;
     return (
         <CartItemContainer>
-            <ItemImageSection><ItemImage src='/images/ContentImage.png' /></ItemImageSection>
+            <ItemImageSection><ItemImage src={imageURL} /></ItemImageSection>
             <ItemContentSection>
-                <ItemName>Spicy seasoned seafood noodles</ItemName>
-                <ItemPrice>₹.50</ItemPrice>
+                <ItemName>{name}</ItemName>
+                <ItemPrice>₹.{price}</ItemPrice>
                 <ItemActionArea>
                     <RemoveItemBtn><RemoveIcon /> </RemoveItemBtn>
                     <QuantityContainer>
