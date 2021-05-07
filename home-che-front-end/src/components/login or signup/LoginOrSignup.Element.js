@@ -3,8 +3,6 @@ import { Input, Checkbox, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 export const LoginOrSignUpContainer = styled.form`
-@media screen and (max-width:425px){
-    width:90%;
     background-color:#2D303E;
     height:25rem;
     margin:0 auto;
@@ -12,9 +10,17 @@ export const LoginOrSignUpContainer = styled.form`
     align-items:center;
     border-radius:11px;
     padding:10px;
-    flex-direction:column
+    flex-direction:column;
+    width:25rem;
+
+@media screen and (max-width:425px){
+    width:90%;
 }
 
+`;
+export const Heading = styled.h2   `
+color: #abbbc2;
+    margin-bottom: 0;
 `;
 
 export const LoginInput = styled.input`
@@ -23,7 +29,7 @@ export const LoginInput = styled.input`
     height:2rem;
     background-color:#2D303E;
     padding:10px;
-    margin-top:10px;
+    margin-top:27px;
     border:2px solid #393C49;
     outline:none;
     border-radius:8px;
@@ -32,8 +38,12 @@ export const LoginInput = styled.input`
         color:#ABBBC2;
     }
 }
+    @media screen and (max-width:375px){
+        &&&{
+            width:18rem;
+        }
 
-`;
+    }`;
 export const AgreementContainer = styled.div`
 display:flex;
 width:20rem;
@@ -43,6 +53,10 @@ padding:10px;
 display:flex;
 align-items:center;
 margin:10px;
+@media screen and (max-width:375px){
+        width:18rem;
+
+    }
 `;
 
 export const CheckboxInput = styled.input`
@@ -79,6 +93,10 @@ export const SubmitButton = styled(Button)`
     color:#ABBBC2;
     padding:10px
 }
+@media screen and (max-width:375px){
+        width:18rem;
+
+    }
 `;
 
 export const ToSignUpContainer = styled.div`

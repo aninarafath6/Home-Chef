@@ -8,13 +8,15 @@ import {
     AgreeLink,
     SubmitButton,
     ToSignUpContainer,
-    ToSignText
+    ToSignText,
+    Heading
     } from './LoginOrSignup.Element';
 
 export default function LoginOrSignUp() {
     
     return (
         <LoginOrSignUpContainer>
+            <Heading>Login</Heading>
             <LoginInput required placeholder='Email Address or Phone no' autoFocus={true} />
             <LoginInput required placeholder='Password' autoFocus={true} />
             <LoginInput required  placeholder='Conform Password' autoFocus={true} />
@@ -25,11 +27,11 @@ export default function LoginOrSignUp() {
             </AgreeText>
             </AgreementContainer>
             
-            <SubmitButton type='submit'>SignUp</SubmitButton>
+            <SubmitButton type='submit'>Login</SubmitButton>
             <ToSignUpContainer>
-            <ToSignText>
+            {/* <ToSignText>
             You don’t have a <br />account Please <AgreeLink to='/'>Sign Up</AgreeLink> 
-            </ToSignText>
+            </ToSignText> */}
             </ToSignUpContainer>
         </LoginOrSignUpContainer>
     )
