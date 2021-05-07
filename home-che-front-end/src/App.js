@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/header/Header";
 import { Pages } from './utils/Pages';
 import Footer from './components/footer/Footer';
-
+import Layout from './components/Layout'
 export default function App() {
   return (
-    <div>
+    <Layout>
       <Router>
         <Header />
 
@@ -22,6 +22,6 @@ export default function App() {
         })}
         <Footer />
       </Router>
-    </div>
+    </Layout>
   )
 }
