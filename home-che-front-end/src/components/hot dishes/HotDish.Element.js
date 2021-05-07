@@ -14,7 +14,7 @@ padding:0;
   `;
   export const Heading = styled.h1`
   /* Hot Dishes */
-  margin: 60px 15px;
+  margin: 122px 15px;
       font-family: Barlow;
       font-style: normal;
       font-weight: 600;
@@ -54,6 +54,8 @@ padding:0;
       grid-template-columns:repeat(5,1fr);
       grid-column-gap: 17px;
       grid-row-gap: 85px;
+    margin: 14px;
+
         @media screen and (max-width:1024px){
         grid-template-columns:repeat(3,1fr);
         }     
@@ -79,9 +81,10 @@ padding:0;
     @media screen and (max-width:1024px){
       height:485px;
         }   
-        @media screen and (max-width:1024px){
-      width: 88%;
-        }    
+        @media screen and (max-width:425px){
+          width: 85%;
+          height: 417px;
+        } 
   `;
   export const DishImageContainer = styled.div`
       width:155px;
@@ -93,6 +96,11 @@ padding:0;
       height:220px;
       transform: translateY(-211px);
         }   
+        @media screen and (max-width:425px){
+          width: 180px;
+height: 180px;
+transform: translateY(-182px);
+        } 
   `;
   export const DisImage = styled.img`
         width:100%;
@@ -101,6 +109,7 @@ padding:0;
         :hover{
           transform: rotate(45deg);
         }
+
   `;
   export const DishContentContainer = styled.div`
       display:flex;
@@ -129,6 +138,14 @@ export const DishName = styled.p`
       @media screen and (max-width:1024px){
         font-size: 25px;
         }   
+        @media screen and (max-width:425px){
+        font-size: 22px;
+        margin-top:0;
+        }  
+        @media screen and (max-width:365px){
+        font-size: 20px;
+        margin-top:0;
+        } 
     `;
 
 export const DishPrice = styled.p`
