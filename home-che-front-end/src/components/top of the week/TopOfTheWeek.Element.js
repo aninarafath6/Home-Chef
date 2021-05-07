@@ -55,16 +55,15 @@
       grid-column-gap: 17px;
       grid-row-gap: 85px;
       margin: 14px;
-
-        @media screen and (max-width:1024px){
+      @media screen and (max-width:1024px){
         grid-template-columns:repeat(3,1fr);
         }     
         @media screen and (max-width:834px){
         grid-template-columns:repeat(2,1fr);
         } 
         @media screen and (max-width:425px){
-        grid-template-columns:repeat(1,1fr);
-        grid-row-gap: 121px;
+        grid-template-columns:repeat(2,1fr);
+        grid-row-gap: 80px;
         } 
 
   `;
@@ -82,8 +81,8 @@
       height:485px;
         }  
         @media screen and (max-width:425px){
-          width: 85%;
-          height: 417px;
+          width: 100%;
+          height: 290px;
         } 
   `;
   export const DishImageContainer = styled.div`
@@ -97,9 +96,9 @@
       transform: translateY(-211px);
         }  
         @media screen and (max-width:425px){
-          width: 180px;
-height: 180px;
-transform: translateY(-182px);
+          width: 120px;
+          height: 120px;
+          transform: translateY(-127px);
         } 
   `;
   export const DisImage = styled.img`
@@ -139,11 +138,7 @@ export const DishName = styled.p`
     font-size: 25px;
     }   
     @media screen and (max-width:425px){
-        font-size: 22px;
-        margin-top:0;
-        }  
-        @media screen and (max-width:365px){
-        font-size: 20px;
+        font-size: 14px;
         margin-top:0;
         } 
 `;
@@ -162,7 +157,11 @@ margin-top: 0;
 color: #FFFFFF;
 @media screen and (max-width:1024px){
     font-size: 28px;
-    }  
+    } 
+    @media screen and (max-width:425px){
+        font-size: 20px;
+        margin-top:0;
+        }  
 `;
 export const DishAvailability =styled.p`
 /* 20 Bowls available */
@@ -177,7 +176,11 @@ margin-top: 0;
 color: #ABBBC2;
 @media screen and (max-width:1024px){
     font-size: 20px;
-    }  `;
+    } 
+    @media screen and (max-width:425px){
+        font-size: 15px;
+        margin-top:0;
+        }  `;
 export const AddToCartButton = styled(Button)`
 &&&{
 background: #2D303E;
@@ -189,5 +192,9 @@ color:#fff;
 @media screen and (max-width:1024px){
     padding:9px
     }  
+    @media screen and (max-width:425px){
+          padding:5px
+
+        } 
 }
 `;

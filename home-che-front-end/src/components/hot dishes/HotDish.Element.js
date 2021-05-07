@@ -63,8 +63,8 @@ padding:0;
         grid-template-columns:repeat(2,1fr);
         } 
         @media screen and (max-width:425px){
-        grid-template-columns:repeat(1,1fr);
-        grid-row-gap: 121px;
+        grid-template-columns:repeat(2,1fr);
+        grid-row-gap: 80px;
         } 
   `;
   export const DishContainer = styled.div`
@@ -82,8 +82,8 @@ padding:0;
       height:485px;
         }   
         @media screen and (max-width:425px){
-          width: 85%;
-          height: 417px;
+          width: 100%;
+          height: 290px;
         } 
   `;
   export const DishImageContainer = styled.div`
@@ -97,9 +97,9 @@ padding:0;
       transform: translateY(-211px);
         }   
         @media screen and (max-width:425px){
-          width: 180px;
-height: 180px;
-transform: translateY(-182px);
+          width: 120px;
+          height: 120px;
+          transform: translateY(-127px);
         } 
   `;
   export const DisImage = styled.img`
@@ -139,13 +139,13 @@ export const DishName = styled.p`
         font-size: 25px;
         }   
         @media screen and (max-width:425px){
-        font-size: 22px;
+        font-size: 14px;
         margin-top:0;
         }  
-        @media screen and (max-width:365px){
+        /* @media screen and (max-width:365px){
         font-size: 20px;
         margin-top:0;
-        } 
+        }  */
     `;
 
 export const DishPrice = styled.p`
@@ -163,6 +163,10 @@ export const DishPrice = styled.p`
   @media screen and (max-width:1024px){
         font-size: 28px;
         }  
+        @media screen and (max-width:425px){
+        font-size: 20px;
+        margin-top:0;
+        } 
 `;
 export const DishAvailability =styled.p`
   /* 20 Bowls available */
@@ -177,7 +181,12 @@ export const DishAvailability =styled.p`
   color: #ABBBC2;
   @media screen and (max-width:1024px){
         font-size: 20px;
-        }  `;
+        } 
+        @media screen and (max-width:425px){
+        font-size: 15px;
+        margin-top:0;
+        } 
+         `;
 export const AddToCartButton = styled(Button)`
   &&&{
     background: #2D303E;
@@ -189,5 +198,9 @@ export const AddToCartButton = styled(Button)`
   @media screen and (max-width:1024px){
         padding:9px
         }  
+        @media screen and (max-width:425px){
+          padding:5px
+
+        } 
 }
 `;
