@@ -6,6 +6,8 @@
   min-height:500px;
   margin:0 auto;
   padding: 5px 28px 0px;
+  padding:0;
+
   @media(max-width:1304px){
       width:100%;
   }
@@ -53,6 +55,7 @@
       grid-template-columns:repeat(5,1fr);
       grid-column-gap: 17px;
       grid-row-gap: 85px;
+
         @media screen and (max-width:1024px){
         grid-template-columns:repeat(3,1fr);
         }     
@@ -73,6 +76,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
+    margin:0 auto;
     flex-direction: column;
     @media screen and (max-width:1024px){
       height:485px;

@@ -6,6 +6,8 @@
   min-height:500px;
   margin:0 auto;
   padding: 5px 28px 0px;
+padding:0;
+
   @media(max-width:1304px){
       width:100%;
   }
@@ -72,6 +74,8 @@
     align-items:center;
     justify-content:center;
     flex-direction: column;
+    margin:0 auto;
+
     @media screen and (max-width:1024px){
       height:485px;
         }   
