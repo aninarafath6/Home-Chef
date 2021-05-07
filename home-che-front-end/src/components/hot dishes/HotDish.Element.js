@@ -44,6 +44,7 @@ padding:0;
       left:0;
       border-radius:15px
       }
+      margin: 90px 15px;
 
   `;
   export const HotDishContentArea = styled.div`
@@ -85,6 +86,9 @@ padding:0;
           width: 100%;
           height: 290px;
         } 
+        @media screen and (max-width:360px){
+        height: 240px;
+        } 
   `;
   export const DishImageContainer = styled.div`
       width:155px;
@@ -100,6 +104,9 @@ padding:0;
           width: 120px;
           height: 120px;
           transform: translateY(-127px);
+        } 
+        @media screen and (max-width:360px){
+        transform: translateY(-105px);
         } 
   `;
   export const DisImage = styled.img`
@@ -142,6 +149,10 @@ export const DishName = styled.p`
         font-size: 14px;
         margin-top:0;
         }  
+        @media screen and (max-width:360px){
+        font-size: 12px;
+        margin-top:0;
+        }
         /* @media screen and (max-width:365px){
         font-size: 20px;
         margin-top:0;
@@ -167,6 +178,10 @@ export const DishPrice = styled.p`
         font-size: 20px;
         margin-top:0;
         } 
+        @media screen and (max-width:360px){
+        font-size: 15px;
+        margin-top:0;
+        }
 `;
 export const DishAvailability =styled.p`
   /* 20 Bowls available */
@@ -186,6 +201,10 @@ export const DishAvailability =styled.p`
         font-size: 15px;
         margin-top:0;
         } 
+        @media screen and (max-width:360px){
+        font-size: 12px;
+        margin-top:0;
+        }
          `;
 export const AddToCartButton = styled(Button)`
   &&&{
@@ -199,8 +218,8 @@ export const AddToCartButton = styled(Button)`
         padding:9px
         }  
         @media screen and (max-width:425px){
-          padding:5px
-
+          padding: 5px;
+font-size: 10px;
         } 
 }
 `;

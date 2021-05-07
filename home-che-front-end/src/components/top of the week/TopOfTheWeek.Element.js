@@ -44,7 +44,7 @@
       left:0;
       border-radius:15px
       }
-
+      margin: 90px 15px;
   `;
   export const TopOfContentArea = styled.div`
         /* width: 100%; */
@@ -67,50 +67,57 @@
         } 
 
   `;
-  export const DishContainer = styled.div`
-     width:100%;
-    height:310px;
-    border-radius:16px;
-    background-color:#1F1D2B;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto;
-    flex-direction: column;
-    @media screen and (max-width:1024px){
-      height:485px;
-        }  
-        @media screen and (max-width:425px){
-          width: 100%;
-          height: 290px;
-        } 
-  `;
-  export const DishImageContainer = styled.div`
-      width:155px;
-      height:155px;
-      transform: translateY(-121px);
-      position: absolute;
-      @media screen and (max-width:1024px){
-      width:220px;
-      height:220px;
-      transform: translateY(-211px);
-        }  
-        @media screen and (max-width:425px){
-          width: 120px;
-          height: 120px;
-          transform: translateY(-127px);
-        } 
-  `;
-  export const DisImage = styled.img`
-        width:100%;
-        height:100%;
-        transition:all ease 1s;
-        :hover{
-          transform: rotate(45deg);
-        }
-        
-  `;
-  export const DishContentContainer = styled.div`
+ export const DishContainer = styled.div`
+ width:100%;
+height:310px;
+border-radius:16px;
+background-color:#1F1D2B;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction: column;
+margin:0 auto;
+
+@media screen and (max-width:1024px){
+  height:485px;
+    }   
+    @media screen and (max-width:425px){
+      width: 100%;
+      height: 290px;
+    } 
+    @media screen and (max-width:360px){
+    height: 240px;
+    } 
+`;
+export const DishImageContainer = styled.div`
+  width:155px;
+  height:155px;
+  transform: translateY(-121px);
+  position: absolute;
+  @media screen and (max-width:1024px){
+  width:220px;
+  height:220px;
+  transform: translateY(-211px);
+    }   
+    @media screen and (max-width:425px){
+      width: 120px;
+      height: 120px;
+      transform: translateY(-127px);
+    } 
+    @media screen and (max-width:360px){
+    transform: translateY(-105px);
+    } 
+`;
+export const DisImage = styled.img`
+    width:100%;
+    height:100%;
+    transition:all ease 1s;
+    :hover{
+      transform: rotate(45deg);
+    }
+
+`;
+export const DishContentContainer = styled.div`
   display:flex;
   align-items:center;
   justify-content:center;
@@ -138,9 +145,17 @@ export const DishName = styled.p`
     font-size: 25px;
     }   
     @media screen and (max-width:425px){
-        font-size: 14px;
-        margin-top:0;
-        } 
+    font-size: 14px;
+    margin-top:0;
+    }  
+    @media screen and (max-width:360px){
+    font-size: 12px;
+    margin-top:0;
+    }
+    /* @media screen and (max-width:365px){
+    font-size: 20px;
+    margin-top:0;
+    }  */
 `;
 
 export const DishPrice = styled.p`
@@ -157,11 +172,15 @@ margin-top: 0;
 color: #FFFFFF;
 @media screen and (max-width:1024px){
     font-size: 28px;
-    } 
+    }  
     @media screen and (max-width:425px){
-        font-size: 20px;
-        margin-top:0;
-        }  
+    font-size: 20px;
+    margin-top:0;
+    } 
+    @media screen and (max-width:360px){
+    font-size: 15px;
+    margin-top:0;
+    }
 `;
 export const DishAvailability =styled.p`
 /* 20 Bowls available */
@@ -178,9 +197,14 @@ color: #ABBBC2;
     font-size: 20px;
     } 
     @media screen and (max-width:425px){
-        font-size: 15px;
-        margin-top:0;
-        }  `;
+    font-size: 15px;
+    margin-top:0;
+    } 
+    @media screen and (max-width:360px){
+    font-size: 12px;
+    margin-top:0;
+    }
+     `;
 export const AddToCartButton = styled(Button)`
 &&&{
 background: #2D303E;
@@ -193,8 +217,8 @@ color:#fff;
     padding:9px
     }  
     @media screen and (max-width:425px){
-          padding:5px
-
-        } 
+      padding: 5px;
+font-size: 10px;
+    } 
 }
 `;
