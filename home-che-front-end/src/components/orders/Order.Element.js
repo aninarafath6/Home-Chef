@@ -122,23 +122,31 @@ export const ItemPrice = styled.p`
         @media screen and (max-width:834px){
         font-size:20px;
     }
-    @media screen and (max-width:425px){
-        font-size:14px;
-    }
+        @media screen and (max-width:425px){
+            font-size:14px;
+        }
 `;
 
 export const DeliveryDetailsContainer = styled.div`
-display:flex;
-align-items:center;
+    display:flex;
+    align-items:center;
 `;
 export const DeliveryDetailsStatus = styled.div`
-width: 15px;
+    width: 15px;
     height: 15px;
     border-radius: 50%;
     background-color: #EA7C69;
     border: 3px solid #fff;
     margin-right:3px;
+@media screen and (max-width:500px){
+    width: 10px;
+    height: 10px;
+}
 `;
 export const DeliveryDetailsText= styled.h5`
-color:#ABBBC2;
+    color:#ABBBC2;
+    margin: 0 5px;
+    @media screen and (max-width:500px){
+        font-size:10px;
+    }
 `;

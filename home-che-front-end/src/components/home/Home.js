@@ -11,7 +11,6 @@ export default function Home() {
             <Hero/>
             <HotDish/>
             <TopOfTheWeek/>
-            <Footer/>
         </Container>
     )
 }
