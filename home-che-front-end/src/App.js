@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/header/Header";
 import { Pages } from './utils/Pages';
 import Footer from './components/footer/Footer';
-import Layout from './components/Layout'
+import Layout from './utils/Layout'
 export default function App() {
   return (
     <Layout>
