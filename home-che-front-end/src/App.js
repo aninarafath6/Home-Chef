@@ -1,23 +1,26 @@
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Header from './components/header/Header';
-import Home from './components/home/Home';
-import Cart from './components/cart/Cart';
-import SimpleBar from 'simplebar-react';
-import 'simplebar/dist/simplebar.min.css';
-import React from 'react'
-export default function App() {
-  const scrollableNodeRef = React.createRef();
-  return (
+import Header from "./components/header/Header";
+import { Pages } from './utils/Pages';
 
-    <SimpleBar  autoHide={true} scrollableNodeProps={{ ref: scrollableNodeRef }}>
+export default function App() {
+  return (
+    <div>
       <Router>
         <Header />
-        <Route   exact path='/' component={Home}/>
-        <Route   path='/home' component={Home}/>
-        <Route   path='/cart' component={Cart}/>
-      </Router>
-    
-      </SimpleBar>
 
+        {Pages.map((page, i) => {
+                return (
+                  <Route
+                    exact
+                    path={page.pageLink}
+                    component={page.view}
+                    key={i}
+                  />
+                );
+              })}
+              
+      </Router>
+    </div>
   )
 }
