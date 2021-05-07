@@ -66,7 +66,12 @@ export default function Header() {
                 </NavLi>
                 <NavLi>
                 <NavLink onClick={closePannal} to='/loginOrSignUp'>
-                    Sign in / Sign Up
+                    Sign in
+                </NavLink>
+                </NavLi>
+                <NavLi>
+                <NavLink onClick={closePannal} to='/loginOrSignUp'>
+                    Sign Up
                 </NavLink>
                 </NavLi>
                 </LiContainer>
