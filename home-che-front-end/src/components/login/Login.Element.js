@@ -87,11 +87,13 @@ color:#EA7C69;
 `
 export const SubmitButton = styled(Button)`
 &&&{
-    width:20rem;
-    height:2rem;
-    background-color:#393C49;
-    color:#ABBBC2;
-    padding:10px
+    width: 20rem;
+    height: 2rem;
+    background-color: #393C49;
+    color: #ABBBC2;
+    padding: 18px;
+    margin: 22px auto;
+    margin-bottom: 0;
 }
 @media screen and (max-width:375px){
         width:18rem;
@@ -102,8 +104,8 @@ export const SubmitButton = styled(Button)`
 export const ToSignUpContainer = styled.div`
   width:20rem;
     height:2rem;
-    display:flex;
-    justify-content:flex-end
+display:flex;
+justify-content:flex-start;
 `;
 export const ToSignText = styled.p`
     /* I agree to the terms of services */
@@ -112,7 +114,7 @@ export const ToSignText = styled.p`
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 11px;
     line-height: 19px;
     /* identical to box height */
 
