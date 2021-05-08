@@ -1,6 +1,10 @@
 require("dotenv").config({ path: "./config.env" });
 const express = require("express");
 const app = express();
+const connectDB = require("./config/db");
+
+// connect to db
+connectDB();
 
 // routs
 const auth = require("./routes/auth");
@@ -9,5 +13,10 @@ const auth = require("./routes/auth");
 app.use(express.json());
 app.use("/api/auth", auth);
 
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`SERVER RUNNING ON PORT ${PORT}`));
+const server = app.listen(PORT, () => console.log(`SERVER RUNNING ON PORT ${PORT}`));
+process.on('unhandledRejection',(err,promise)=>{
+    console.log(`Have a error ${err}`);
+    server.close(()=>process.exit(1));
+})
