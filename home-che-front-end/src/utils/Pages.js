@@ -1,7 +1,9 @@
 import Orders from '../components/orders/Orders';
 import Cart from '../components/cart/Cart';
 import Home from '../components/home/Home';
-import LoginOrSignUp from '../components/login/Login';
+import SignIn from '../components/login/Login';
+import SignUp from '../components/signup/SignUp';
+
 export const Pages = [
     {
         pageLink: '/',
@@ -16,7 +18,11 @@ export const Pages = [
         view: Orders,
       },
       {
-        pageLink: '/loginOrSignUp',
-        view: LoginOrSignUp,
+        pageLink: '/signIn',
+        view: SignIn,
+      },
+      {
+        pageLink: '/signUp',
+        view: SignUp,
       },
 ]

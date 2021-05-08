@@ -7,19 +7,20 @@ import {
     ToSignUpContainer,
     ToSignText,
     Heading
-    } from './Login.Element';
+    } from './Signup.Element';
 
 export default function LoginOrSignUp() {
     
     return (
         <LoginOrSignUpContainer>
-            <Heading>Login</Heading>
+            <Heading>Sign Up</Heading>
+            <LoginInput type='text' required placeholder='Username' autoFocus={true} />
             <LoginInput type='email' required placeholder='Email Address' autoFocus={true} />
             <LoginInput type='password' required placeholder='Password' autoFocus={true} />
             <SubmitButton type='submit'>Login</SubmitButton>
             <ToSignUpContainer>
             <ToSignText>
-            Don't have an account please <AgreeLink to='/signUp'>sign up</AgreeLink> 
+            Do you have an account please <AgreeLink to='/signIn'>login</AgreeLink> 
             </ToSignText>
             </ToSignUpContainer>
         </LoginOrSignUpContainer>
