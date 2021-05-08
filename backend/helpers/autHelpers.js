@@ -1,5 +1,5 @@
 const User = require("../models/Users");
-
+const ErrorResponse = require("../utils/errorResponse");
 exports.signUp = async (req, res, next) => {
   const { username, email, password } = req.body;
   try {
@@ -8,53 +8,32 @@ exports.signUp = async (req, res, next) => {
       email,
       password,
     });
-    res.status(201).json({
-      success: true,
-      user: user,
-    });
+    sentJwtToken(user, 201,res);
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
+    next(error);
   }
 };
 
 exports.signIn = async (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    res.status(400).json({
-      success: false,
-      error: "please provide email and password",
-    });
+    return next(new ErrorResponse("please provide email and password", 400));
   }
 
   try {
     const user = await User.findOne({ email }).select("+password");
     if (!user) {
-      res.status(404).json({
-        success: false,
-        error: "invalid credentials",
-      });
+      return next(new ErrorResponse("invalid credentials", 404));
     }
 
     const isMatch = await user.matchPasswords(password);
     if (!isMatch) {
-      res.status(404).json({
-        success: false,
-        error: "invalid credentials",
-      });
+      return next(new ErrorResponse("invalid credentials", 404));
     }
 
-    res.status(201).json({
-      success: true,
-      token: "ercw344fdsf",
-    });
+    sentJwtToken(user, 200,res);
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
+    return next(new ErrorResponse(error, 500));
   }
 };
 
@@ -64,4 +43,10 @@ exports.forgotPassword = (req, res, next) => {
 
 exports.restPassword = (req, res, next) => {
   res.send("this is restPassword");
+};
+
+const sentJwtToken = async (user, statusCode, res) => {
+  const token = await user.genSignedToken();
+
+  res.status(statusCode).json({ success: true, token });
 };
