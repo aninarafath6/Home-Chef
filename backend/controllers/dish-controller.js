@@ -5,8 +5,8 @@ const ErrorResponse = require("../utils/errorResponse");
 exports.getAllDish = async (req, res, next) => {
   try {
     const all_dish = await Dish.find({});
-  // success response sending
-    res.status(201).json({ success: true, dishes: all_dish });
+    // success response sending
+    res.status(201).json({ success: true, data: all_dish });
   } catch (error) {
     //error handling
     next(new ErrorResponse(error, 500));
@@ -20,6 +20,7 @@ exports.createNewDish = async (req, res, next) => {
 
   // image taking from request body
   const files = req.files;
+
   // checking have an image?
   if (!req.files || !files.image) {
     return next(
@@ -47,7 +48,7 @@ exports.createNewDish = async (req, res, next) => {
         }
 
         // success response sending
-        res.status(201).json({ success: true });
+        res.status(201).json({ success: true, data: dish });
       });
     } catch (error) {
       //error handling
@@ -61,7 +62,52 @@ exports.createNewDish = async (req, res, next) => {
 
 // to update a dish
 exports.updateDish = async (req, res, next) => {
-  res.send("this is update dish router ");
+  // params
+  const { id } = req.params;
+
+  // image taking from request body
+  const files = req.files;
+
+  // checking have an image?
+  if (!req.files || !files.image) {
+    return next(
+      new ErrorResponse(
+        "image not found please upload image and failed creating dish ",
+        404
+      )
+    );
+  }
+  try {
+    // Does checking dish already have in DB?
+    let dish = await Dish.findById(id);
+
+    if (!dish) {
+      return next(new ErrorResponse(`dish with id ${id} was not found`, 404));
+    }
+
+    dish = await Dish.findByIdAndUpdate(id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    try {
+      // moving image into public/dish-images/id.png
+      files.image.mv(`./public/dish-images/${dish._id}.png`, (err, done) => {
+        // error handling
+        if (err) {
+          return next(new ErrorResponse(err, 500));
+        }
+
+        // success response sending
+        res.status(201).json({ success: true, data: dish });
+      });
+    } catch (error) {
+      //error handling
+      next(new ErrorResponse(error, 500));
+    }
+  } catch (error) {
+    return next(new ErrorResponse("dish updating failed", 500));
+  }
 };
 
 // to delate a dish
