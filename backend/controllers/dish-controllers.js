@@ -8,7 +8,7 @@ exports.getAllDish = async (req, res, next) => {
 
 // to create a dish
 exports.createNewDish = async (req, res, next) => {
-  
+
   // destructor value from request body
   const { name, price, availability } = req.body;
 
@@ -29,8 +29,8 @@ exports.createNewDish = async (req, res, next) => {
         next(new ErrorResponse("image not found please upload image", 404));
       }
 
-      // moving image into public/dishImages/id.png
-      image.mv(`../public/dishImages/${dish._id}.png`, (err, done) => {
+      // moving image into public/dish-images/id.png
+      image.mv(`../public/dish-images/${dish._id}.png`, (err, done) => {
         // error handling
         if (err) {
           next(new ErrorResponse("image uploading failed", 500));
