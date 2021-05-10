@@ -1,17 +1,19 @@
 const Dish = require("../models/Dish");
 const ErrorResponse = require("../utils/errorResponse");
 
-
 // to get all dishes from db
 exports.getAllDish = async (req, res, next) => {
   res.send("this is add dish router");
 };
 
-// to create a dish 
-exports.createNewDish= async (req, res, next) => {
+// to create a dish
+exports.createNewDish = async (req, res, next) => {
+  
+  // destructor value from request body
   const { name, price, availability } = req.body;
 
   try {
+    // creating a new dish
     const dish = await Dish.create({
       name,
       price,
@@ -19,22 +21,35 @@ exports.createNewDish= async (req, res, next) => {
     });
 
     try {
+      // image taking from request body
       const image = req.files.image;
+
+      // checking have an image?
+      if (!image) {
+        next(new ErrorResponse("image not found please upload image", 404));
+      }
+
+      // moving image into public/dishImages/id.png
       image.mv(`../public/dishImages/${dish._id}.png`, (err, done) => {
+        // error handling
         if (err) {
           next(new ErrorResponse("image uploading failed", 500));
         }
+
+        // success response sending
         res.status(201).json({ success: true });
       });
     } catch (error) {
+      //error handling
       next(new ErrorResponse("creating new dish  failed", 500));
     }
   } catch (error) {
+    //error handling
     next(new ErrorResponse("creating new dish  failed", 500));
   }
 };
 
-// to update a dish 
+// to update a dish
 exports.updateDish = async (req, res, next) => {
   res.send("this is update dish router ");
 };

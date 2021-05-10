@@ -16,6 +16,8 @@ exports.signUp = async (req, res, next) => {
   }
 };
 
+
+
 exports.signIn = async (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {

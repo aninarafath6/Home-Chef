@@ -6,7 +6,7 @@ const {
   createNewDish,
   updateDish,
   delateDish,
-} = require("../helpers/dishHelper");
+} = require("../controllers/dish-controllers");
 
 router.route("/").get(getAllDish).post(createNewDish);
 router.route("/:id").put(updateDish).delete(delateDish);
