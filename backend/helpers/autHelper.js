@@ -1,5 +1,7 @@
 const User = require("../models/Users");
 const ErrorResponse = require("../utils/errorResponse");
+
+
 exports.signUp = async (req, res, next) => {
   const { username, email, password } = req.body;
   try {
@@ -8,7 +10,7 @@ exports.signUp = async (req, res, next) => {
       email,
       password,
     });
-    sentJwtToken(user, 201,res);
+    sentJwtToken(user, 201, res);
   } catch (error) {
     next(error);
   }
@@ -31,19 +33,40 @@ exports.signIn = async (req, res, next) => {
       return next(new ErrorResponse("invalid credentials", 404));
     }
 
-    sentJwtToken(user, 200,res);
+    sentJwtToken(user, 200, res);
   } catch (error) {
     return next(new ErrorResponse(error, 500));
   }
 };
 
-exports.forgotPassword = (req, res, next) => {
-  res.send("this is forgotPassword");
-};
+// exports.forgotPassword = async (req, res, next) => {
+//   const { email } = req.body;
+//   const user = await User.findOne({ email });
 
-exports.restPassword = (req, res, next) => {
-  res.send("this is restPassword");
-};
+//   if (!user) {
+//     return next(new ErrorResponse("email could not be sent", 404));
+//   }
+
+//   const restToken = user.genResetPasswordToken();
+//   await user.save();
+
+//   const resetURL = `http://localhost:3000/passwordReset/${restToken}`;
+//   const message = `
+//   <h1>You have requested a password reset</h1>
+//   <p>please click and this link to reset your old password</p>
+//   <a href='${resetURL}' clicktracking=off>${resetURL}</a>
+//   `;
+
+//   try {
+    
+//   } catch (error) {
+    
+//   }
+// };
+
+// exports.restPassword = (req, res, next) => {
+//   res.send("this is restPassword");
+// };
 
 const sentJwtToken = async (user, statusCode, res) => {
   const token = await user.genSignedToken();
