@@ -1,5 +1,6 @@
 const Dish = require("../models/Dish");
 const ErrorResponse = require("../utils/errorResponse");
+const fs = require("fs");
 
 // to get all dishes from db
 exports.getAllDish = async (req, res, next) => {
@@ -112,5 +113,24 @@ exports.updateDish = async (req, res, next) => {
 
 // to delate a dish
 exports.delateDish = async (req, res, next) => {
-  res.send("this is delate dish router");
+  // params
+  const { id } = req.params;
+
+  try {
+    let dish = await Dish.findById(id);
+
+    if (!dish) {
+      return next(new ErrorResponse(`dish with id ${id} was not found`, 404));
+    }    
+    try {
+      fs.unlinkSync(`./public/dish-images/${dish._id}.png`);
+      dish = await Dish.findByIdAndDelete(id);
+      res.status(201).json({ success: true, data: dish });
+    } catch(err) {
+      next(new ErrorResponse(err),500)
+    }
+    
+  } catch (error) {
+    next(new ErrorResponse("failed deleting dish  ", 500));
+  }
 };
