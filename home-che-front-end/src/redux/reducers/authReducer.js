@@ -1,8 +1,7 @@
 import {
-  GET_USER,
-  LOGIN_FAILED,
-  LOGIN_REQUEST,
-  LOGIN_SUCCESS,
+  SIGNUP_FAILED,
+  SIGNUP_REQUEST,
+  SIGNUP_SUCCESS,
 } from "../types/auth-types";
 const initialState = {
   isLogged: false,
@@ -12,22 +11,21 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_REQUEST:
+    case SIGNUP_REQUEST:
       return {
         ...state,
         isLoading: true,
       };
-    case LOGIN_SUCCESS:
+    case SIGNUP_SUCCESS:
       return {
         isLogged: true,
         isLoading: false,
         error: "",
       };
-    case LOGIN_FAILED:
+    case SIGNUP_FAILED:
       return {
         isLogged: false,
         isLoading: false,
-        user: {},
         error: action.payload,
       };
 

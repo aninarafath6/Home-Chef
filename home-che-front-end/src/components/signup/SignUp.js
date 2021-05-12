@@ -1,12 +1,17 @@
 import React from "react";
 import useForm from "../../hooks/useForm";
 import { signUp } from "../../api/userApi";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
+
+// importing auth actions
 import {
-  userLoginFailed,
-  userLoginRequest,
-  userLoginSuccess,
+  userSignUpFailed,
+  userSignUpRequest,
+  userSignUpSuccess,
 } from "../../redux/actions/authAction";
+
+// importing styled components
 import {
   LoginInput,
   LoginOrSignUpContainer,
@@ -18,24 +23,44 @@ import {
 } from "./Signup.Element";
 
 export default function LoginOrSignUp() {
+  // getting auth state from redux state using useSelector hook
+  const { isLoading } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  // custom form hook
   const [userState, handelUserForm] = useForm({
     username: "",
     email: "",
     password: "",
   });
 
-  const dispatch = useDispatch();
   const onSubmitHandler = async (e) => {
+    // prevent reloading
     e.preventDefault();
-    dispatch(userLoginRequest());
-    let response = await signUp(userState);
-    if (response.success) {
-      dispatch(userLoginSuccess());
-    } else {
-      dispatch(userLoginFailed(response.data.error));
+    // setting user login request value
+    dispatch(userSignUpRequest());
+    try {
+      //calling sign up api
+      let response = await signUp(userState);
+      // checking response is success
+      if (response.success) {
+        // redirecting to home page
+        history.push("/");
+        // alert('welcome to home chef')
+        // if succuss calling user success action
+        return dispatch(userSignUpSuccess());
+      } else {
+        // if err calling user failed action
+        return dispatch(userSignUpFailed(response.data.error));
+      }
+    } catch (error) {
+      // catching err
+      return dispatch(userSignUpFailed(error.message));
     }
   };
   return (
+    // return jsx sign up page
     <LoginOrSignUpContainer onSubmit={onSubmitHandler}>
       <Heading>Sign Up</Heading>
       <LoginInput
@@ -65,7 +90,9 @@ export default function LoginOrSignUp() {
         onChange={handelUserForm}
         value={userState.password}
       />
-      <SubmitButton type="submit">Login</SubmitButton>
+      <SubmitButton type="submit">
+        {isLoading ? "Loading..." : "Sign Up"}
+      </SubmitButton>
       <ToSignUpContainer>
         <ToSignText>
           Do you have an account please{" "}

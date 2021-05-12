@@ -1,25 +1,24 @@
 import {
-  LOGIN_REQUEST,
-  LOGIN_SUCCESS,
-  LOGIN_FAILED,
-  GET_USER,
+  SIGNUP_REQUEST,
+  SIGNUP_SUCCESS,
+  SIGNUP_FAILED,
 } from "../types/auth-types";
 
-export const userLoginRequest = () => {
+export const userSignUpRequest = () => {
   return {
-    type: LOGIN_REQUEST,
+    type: SIGNUP_REQUEST,
   };
 };
 
-export const userLoginSuccess = () => {
+export const userSignUpSuccess = () => {
   return {
-    type: LOGIN_SUCCESS,
+    type: SIGNUP_SUCCESS,
   };
 };
 
-export const userLoginFailed = (error) => {
+export const userSignUpFailed = (error) => {
   return {
-    type: LOGIN_FAILED,
+    type: SIGNUP_FAILED,
     payload: error,
   };
 };

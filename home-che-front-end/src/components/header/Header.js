@@ -1,84 +1,104 @@
-import { useState } from 'react';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { useState } from "react";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+
+// importing styled components
 import {
-    Container,
-    HeaderContainer,
-    LogoContainer,
-    MenuIconButton,
-    LogoText,
-    SearchContainer,
-    SearchInput,
-    SearchIconContainer,
-    SearchIcon,
-    NavUl,
-    NavLi,
-    LiContainer,
-    CartIconContainer,
-    NavLink,
-    NavCloseButton
-    
-} from './Header.Element';
-import { Dialog } from '@material-ui/core';
+  Container,
+  HeaderContainer,
+  LogoContainer,
+  MenuIconButton,
+  LogoText,
+  SearchContainer,
+  SearchInput,
+  SearchIconContainer,
+  SearchIcon,
+  NavUl,
+  NavLi,
+  LiContainer,
+  CartIconContainer,
+  NavLink,
+  NavCloseButton,
+} from "./Header.Element";
+import { Dialog } from "@material-ui/core";
+import { useSelector } from "react-redux";
 
 export default function Header() {
-    const [status,setStatus] =useState(false)
-    const closePannal =()=>{
-        setStatus(!status);
-    }
-    return (
-        <Container>
-            <HeaderContainer>
-                <LogoContainer status={status}>
-                    <MenuIconButton onClick={()=>setStatus(!status)} src='/icons/menuIcon.svg' />
-                    <LogoText to="/">Home Chef</LogoText>
-                </LogoContainer>
-                <SearchContainer>
-                    <SearchIconContainer>
-                        <SearchIcon src='/icons/searchIcon.svg' />
-                    </SearchIconContainer>
-                    <SearchInput placeholder='Search for food ,coffee ,etc...' />
-                </SearchContainer>
-               <Dialog open={status}>
-               <NavUl>
-               <NavCloseButton onClick={()=>setStatus(!status)} src='/icons/menuIcon.svg' />
-                <LiContainer>
-                <NavLi>
-                <NavLink onClick={closePannal} to='/cart'>
-                <CartIconContainer>
-                    <ShoppingCartIcon/>
-                </CartIconContainer>
+  const { isLogged } = useSelector((state) => state.auth);
+  // status state for open and close dialog box
+  const [status, setStatus] = useState(false);
+  // close dialog box function
+  const closePannal = () => {
+    setStatus((prev) => !prev);
+  };
+  return (
+    <Container>
+      <HeaderContainer>
+        <LogoContainer status={status}>
+          <MenuIconButton
+            onClick={() => setStatus(!status)}
+            src="/icons/menuIcon.svg"
+          />
+          <LogoText to="/">Home Chef</LogoText>
+        </LogoContainer>
+        <SearchContainer>
+          <SearchIconContainer>
+            <SearchIcon src="/icons/searchIcon.svg" />
+          </SearchIconContainer>
+          <SearchInput placeholder="Search for food ,coffee ,etc..." />
+        </SearchContainer>
+        <Dialog open={status}>
+          <NavUl>
+            <NavCloseButton
+              onClick={() => setStatus(!status)}
+              src="/icons/menuIcon.svg"
+            />
+            <LiContainer>
+              <NavLi>
+                <NavLink onClick={closePannal} to="/cart">
+                  <CartIconContainer>
+                    <ShoppingCartIcon />
+                  </CartIconContainer>
                 </NavLink>
-                </NavLi>
-                <NavLi>
-                <NavLink onClick={closePannal} to='/'>
-                    Home
+              </NavLi>
+              <NavLi>
+                <NavLink onClick={closePannal} to="/">
+                  Home
                 </NavLink>
-                </NavLi>
-                <NavLi>
-                <NavLink onClick={closePannal} to='/orders'>
-                    Orders
+              </NavLi>
+              <NavLi>
+                <NavLink onClick={closePannal} to="/orders">
+                  Orders
                 </NavLink>
-                </NavLi>
-                <NavLi>
-                <NavLink onClick={closePannal} to='/offers'>
-                    Offers
+              </NavLi>
+              <NavLi>
+                <NavLink onClick={closePannal} to="/offers">
+                  Offers
                 </NavLink>
-                </NavLi>
+              </NavLi>
+              {isLogged ? (
                 <NavLi>
-                <NavLink onClick={closePannal} to='/signIn'>
-                    Sign in
-                </NavLink>
+                  <NavLink onClick={closePannal} to="/signIn">
+                    Logout
+                  </NavLink>
                 </NavLi>
-                <NavLi>
-                <NavLink onClick={closePannal} to='/signUp'>
-                    Sign Up
-                </NavLink>
-                </NavLi>
-                </LiContainer>
-                </NavUl>
-               </Dialog>
-            </HeaderContainer>
-           
-        </Container>
-    )
+              ) : (
+                <>
+                  <NavLi>
+                    <NavLink onClick={closePannal} to="/signIn">
+                      Sign in
+                    </NavLink>
+                  </NavLi>
+                  <NavLi>
+                    <NavLink onClick={closePannal} to="/signUp">
+                      Sign Up
+                    </NavLink>
+                  </NavLi>{" "}
+                </>
+              )}
+            </LiContainer>
+          </NavUl>
+        </Dialog>
+      </HeaderContainer>
+    </Container>
+  );
 }
