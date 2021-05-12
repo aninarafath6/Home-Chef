@@ -1,5 +1,8 @@
 import React from "react";
 import useForm from "../../hooks/useForm";
+import { signUp } from "../../api/userApi";
+import { useDispatch } from "react-redux";
+import { userLoginFailed, userLoginRequest, userLoginSuccess } from "../../redux/actions/userAction";
 import {
   LoginInput,
   LoginOrSignUpContainer,
@@ -17,10 +20,17 @@ export default function LoginOrSignUp() {
     password: "",
   });
 
-  
-  const onSubmitHandler = (e) => {
+  const dispatch = useDispatch();
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log(userState);
+    dispatch(userLoginRequest());
+    let response = await signUp(userState);
+    if(response.success){
+      dispatch(userLoginSuccess(response.data))
+    }else{
+      dispatch(userLoginFailed(response.data.error))
+      
+    }
   };
   return (
     <LoginOrSignUpContainer onSubmit={onSubmitHandler}>

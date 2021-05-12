@@ -1,6 +1,11 @@
-import { LOGIN_FAILED, LOGIN_REQUEST, LOGIN_SUCCESS } from "../types/user-types";
+import {
+  LOGIN_FAILED,
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+} from "../types/user-types";
 const initialState = {
   isLogged: false,
+  isLoading: false,
   user: {},
   error: "",
 };
@@ -10,17 +15,20 @@ const userReducer = (state = initialState, action) => {
     case LOGIN_REQUEST:
       return {
         ...state,
-        isLogged: true,
+        isLoading: true,
       };
     case LOGIN_SUCCESS:
       return {
-        isLogged: false,
+        isLogged: true,
+        isLoading: false,
+
         user: action.payload,
         error: "",
       };
     case LOGIN_FAILED:
       return {
         isLogged: false,
+        isLoading: false,
         user: {},
         error: action.payload,
       };
