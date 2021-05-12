@@ -6,7 +6,7 @@ export const signUp = (payload) => {
       resolve(res.data);
 
       if (res.success) {
-        localStorage.setItem("auth-token", res.data.token);
+        // localStorage.setItem("home-token", res.data.token);
       } else {
         reject(res.error);
       }
@@ -15,3 +15,9 @@ export const signUp = (payload) => {
     }
   });
 };
+
+const getUser = () =>{
+  return new Promise((resolve,reject)=>{
+
+  })
+}

@@ -1,21 +1,24 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS } from "../types/user-types";
+import {
+  GET_USER_FAILED,
+  GET_USER_REQUEST,
+  GET_USER_SUCCESS,
+} from "../types/user-types";
 
-export const userLoginRequest = () => {
+export const getUserRequest = () => {
   return {
-    type: LOGIN_REQUEST,
+    type: GET_USER_REQUEST,
   };
 };
 
-export const userLoginSuccess = (user) => {
+export const getUserSuccess = (user) => {
   return {
-    type: LOGIN_SUCCESS,
+    type: GET_USER_SUCCESS,
     payload: user,
   };
 };
-
-export const userLoginFailed = (error) => {
+export const getUserFailed = (error) => {
   return {
-    type: LOGIN_FAILED,
+    type: GET_USER_FAILED,
     payload: error,
   };
 };

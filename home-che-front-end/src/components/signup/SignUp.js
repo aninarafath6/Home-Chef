@@ -2,7 +2,11 @@ import React from "react";
 import useForm from "../../hooks/useForm";
 import { signUp } from "../../api/userApi";
 import { useDispatch } from "react-redux";
-import { userLoginFailed, userLoginRequest, userLoginSuccess } from "../../redux/actions/userAction";
+import {
+  userLoginFailed,
+  userLoginRequest,
+  userLoginSuccess,
+} from "../../redux/actions/authAction";
 import {
   LoginInput,
   LoginOrSignUpContainer,
@@ -25,11 +29,10 @@ export default function LoginOrSignUp() {
     e.preventDefault();
     dispatch(userLoginRequest());
     let response = await signUp(userState);
-    if(response.success){
-      dispatch(userLoginSuccess(response.data))
-    }else{
-      dispatch(userLoginFailed(response.data.error))
-      
+    if (response.success) {
+      dispatch(userLoginSuccess());
+    } else {
+      dispatch(userLoginFailed(response.data.error));
     }
   };
   return (
