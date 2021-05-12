@@ -1,4 +1,5 @@
 import React from 'react'
+import useForm from '../../hooks/useForm';
 import { 
     LoginInput, 
     LoginOrSignUpContainer,
@@ -10,13 +11,21 @@ import {
     } from './Signup.Element';
 
 export default function LoginOrSignUp() {
-    
+    const [userState,handelUserForm] = useForm({
+        username:'',
+        email:'',
+        password:''
+    })
+   const onSubmitHandler = (e)=>{
+       e.preventDefault();
+       console.log(userState);
+   }
     return (
-        <LoginOrSignUpContainer>
+        <LoginOrSignUpContainer onSubmit={onSubmitHandler}>
             <Heading>Sign Up</Heading>
-            <LoginInput type='text' required placeholder='Username' autoFocus={true} />
-            <LoginInput type='email' required placeholder='Email Address' autoFocus={true} />
-            <LoginInput type='password' required placeholder='Password' autoFocus={true} />
+            <LoginInput type='text' required placeholder='Username' autoFocus={true} name='username' onChange={handelUserForm} value={userState.username} />
+            <LoginInput type='email' required placeholder='Email Address' name='email' autoFocus={true}  onChange={handelUserForm}  value={userState.email}/>
+            <LoginInput type='password' required placeholder='Password' name='password' autoFocus={true} onChange={handelUserForm}  value={userState.password} />
             <SubmitButton type='submit'>Login</SubmitButton>
             <ToSignUpContainer>
             <ToSignText>
