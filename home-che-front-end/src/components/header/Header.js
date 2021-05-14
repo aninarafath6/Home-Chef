@@ -20,15 +20,23 @@ import {
   NavCloseButton,
 } from "./Header.Element";
 import { Dialog } from "@material-ui/core";
-import { useSelector } from "react-redux";
+import { useSelector ,useDispatch} from "react-redux";
+import {logout} from "../../redux/actions/authAction";
 
 export default function Header() {
+  const dispatch = useDispatch()
   const { isLogged } = useSelector((state) => state.auth);
   // status state for open and close dialog box
   const [status, setStatus] = useState(false);
   // close dialog box function
   const closePannal = () => {
     setStatus((prev) => !prev);
+  };
+
+  const onLogout = () => {
+    setStatus((prev) => !prev);
+    localStorage.removeItem("home-token");
+    dispatch(logout())
   };
   return (
     <Container>
@@ -77,7 +85,7 @@ export default function Header() {
               </NavLi>
               {isLogged ? (
                 <NavLi>
-                  <NavLink onClick={closePannal} to="/signIn">
+                  <NavLink onClick={onLogout} to="/">
                     Logout
                   </NavLink>
                 </NavLi>

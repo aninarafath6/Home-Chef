@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useForm from "../../hooks/useForm";
 import { signUp } from "../../api/userApi";
 import { useDispatch, useSelector } from "react-redux";
@@ -34,6 +34,11 @@ export default function SignUp() {
     email: "",
     password: "",
   });
+
+  useEffect(()=>{
+    // checking user is already registered
+    localStorage.getItem('home-token') && history.push('/')
+  },[history])
 
   const onSubmitHandler = async (e) => {
     // prevent reloading

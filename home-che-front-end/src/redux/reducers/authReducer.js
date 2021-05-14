@@ -1,4 +1,5 @@
 import {
+  LOGOUT,
   SIGNUP_FAILED,
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
@@ -29,6 +30,13 @@ const userReducer = (state = initialState, action) => {
         isLogged: false,
         isLoading: false,
         error: action.payload,
+      };
+    case LOGOUT:
+      return {
+        isLogged: false,
+        isLogged: false,
+        isLoading: false,
+        error: "",
       };
 
     default:

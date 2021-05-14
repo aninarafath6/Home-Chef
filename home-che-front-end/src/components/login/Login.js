@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useHistory } from "react-router";
 import useForm from "../../hooks/useForm";
 import {
   LoginInput,
@@ -11,6 +12,12 @@ import {
 } from "./Login.Element";
 
 export default function LoginOrSignUp() {
+  const history = useHistory(); 
+  useEffect(()=>{
+    // checking user is already registered
+    localStorage.getItem('home-token') && history.push('/')
+  },[history])
+
   const [userState, handelUserForm] = useForm({
     email: "",
     password: "",

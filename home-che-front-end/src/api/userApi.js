@@ -7,10 +7,10 @@ export const signUp = (payload) => {
       // calling sign up api
       let res = await axios.post("/api/auth/signUp", payload);
       // resolving success response
+      localStorage.setItem("home-token", res.data.token);
        
       resolve(res.data);
       if (res.success) {
-        localStorage.setItem("home-token", res.data.token);
       } else {
         // rejecting error response
         reject(res.error);
