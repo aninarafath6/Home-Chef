@@ -22,7 +22,7 @@ import {
   Heading,
 } from "./Signup.Element";
 
-export default function LoginOrSignUp() {
+export default function SignUp() {
   // getting auth state from redux state using useSelector hook
   const { isLoading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();

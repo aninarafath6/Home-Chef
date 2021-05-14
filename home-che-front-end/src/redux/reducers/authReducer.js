@@ -2,10 +2,8 @@ import {
   SIGNUP_FAILED,
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
-  TOKEN_CHECKING_FAILED,
-  TOKEN_CHECKING_REQUEST,
-  TOKEN_CHECKING_SUCCESS,
 } from "../types/auth-types";
+
 const initialState = {
   isLogged: false,
   isLoading: false,
@@ -32,19 +30,7 @@ const userReducer = (state = initialState, action) => {
         isLoading: false,
         error: action.payload,
       };
-    case TOKEN_CHECKING_REQUEST:
-      return {
-        tokenCheckingLoading: true,
-      };
-      case TOKEN_CHECKING_SUCCESS:
-      return {
-        isLogged:true
-      };
-      case TOKEN_CHECKING_FAILED:
-      return {
-        tokenCheckingLoading: false,
-        isLogged:false
-      };
+
     default:
       return state;
   }

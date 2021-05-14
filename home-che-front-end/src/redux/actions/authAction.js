@@ -1,10 +1,4 @@
-import {
-  SIGNUP_REQUEST,
-  SIGNUP_SUCCESS,
-  SIGNUP_FAILED,
-  TOKEN_CHECKING_REQUEST,
-  TOKEN_CHECKING_SUCCESS,
-} from "../types/auth-types";
+import { SIGNUP_REQUEST, SIGNUP_SUCCESS } from "../types/auth-types";
 
 export const userSignUpRequest = () => {
   return {
@@ -17,26 +11,8 @@ export const userSignUpSuccess = () => {
     type: SIGNUP_SUCCESS,
   };
 };
-
-export const userSignUpFailed = (error) => {
+export const userSignUpFailed = () => {
   return {
     type: SIGNUP_FAILED,
-    payload: error,
   };
 };
-
-export const tokenCheckingRequest = ()=>{
-  return {
-    type:TOKEN_CHECKING_REQUEST
-  }
-}
-export const tokenCheckingSuccess = ()=>{
-  return {
-    type:TOKEN_CHECKING_SUCCESS
-  }
-}
-export const tokenCheckingFailed = ()=>{
-  return {
-    type:TOKEN_CHECKING_REQUEST
-  }
-}
