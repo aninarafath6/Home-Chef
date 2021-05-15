@@ -47,21 +47,19 @@ export default function SignUp() {
     e.preventDefault();
     // setting user login request value
     dispatch(userSignUpRequest());
-
+    
       //calling sign up api
-      let response = await signUp(userState);
-      console.log(response);
-      // // checking response is success
-      // if (response.data.success) {
-      //   // redirecting to home page
-      //   history.push("/");
-      //   // alert('welcome to home chef')
-      //   // if succuss calling user success action
-      //   return dispatch(userSignUpSuccess());
-      // } else {
-      //   // if err calling user failed action
-      //   return dispatch(userSignUpFailed(response.data.error));
-      // }
+
+      signUp(userState).then(response=>{
+        // redirecting to home page
+        history.push("/");
+        alert('welcome to home chef')
+        // if succuss calling user success action
+        dispatch(userSignUpSuccess());
+      }).catch(error=>{
+        dispatch(userSignUpFailed(error));
+      })
+    
     
   };
   return (

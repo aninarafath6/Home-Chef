@@ -9,7 +9,6 @@ const initialState = {
   isLogged: false,
   isLoading: false,
   error: "",
-  tokenCheckingLoading: false,
 };
 
 const userReducer = (state = initialState, action) => {

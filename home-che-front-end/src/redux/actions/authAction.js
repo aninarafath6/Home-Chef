@@ -11,10 +11,12 @@ export const userSignUpSuccess = () => {
     type: SIGNUP_SUCCESS,
   };
 };
-export const userSignUpFailed = () => {
+export const userSignUpFailed = (payload) => {
+  console.log({user:payload});
   return {
     type: SIGNUP_FAILED,
-  };
+    payload:payload
+  }; 
 };
 
 

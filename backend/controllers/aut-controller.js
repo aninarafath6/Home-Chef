@@ -20,7 +20,7 @@ exports.signUp = async (req, res, next) => {
   } catch (error) {
 
     // error handling
-    next(error);
+    next(new ErrorResponse(error.message, 500));
   }
 };
 
