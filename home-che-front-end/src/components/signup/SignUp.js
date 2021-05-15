@@ -20,12 +20,14 @@ import {
   ToSignUpContainer,
   ToSignText,
   Heading,
+  ErrorMessage,
 } from "./Signup.Element";
 
 export default function SignUp() {
   // getting auth state from redux state using useSelector hook
   const { isLoading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const {error} = useSelector(state => state.auth)
   const history = useHistory();
 
   // custom form hook
@@ -35,39 +37,43 @@ export default function SignUp() {
     password: "",
   });
 
-  useEffect(()=>{
+  useEffect(() => {
     // checking user is already registered
-    localStorage.getItem('home-token') && history.push('/')
-  },[history])
+    localStorage.getItem("home-token") && history.push("/");
+  }, [history,error]);
 
   const onSubmitHandler = async (e) => {
     // prevent reloading
     e.preventDefault();
     // setting user login request value
     dispatch(userSignUpRequest());
-    try {
+
       //calling sign up api
       let response = await signUp(userState);
-      // checking response is success
-      if (response.success) {
-        // redirecting to home page
-        history.push("/");
-        // alert('welcome to home chef')
-        // if succuss calling user success action
-        return dispatch(userSignUpSuccess());
-      } else {
-        // if err calling user failed action
-        return dispatch(userSignUpFailed(response.data.error));
-      }
-    } catch (error) {
-      // catching err
-      return dispatch(userSignUpFailed(error.message));
-    }
+      console.log(response);
+      // // checking response is success
+      // if (response.data.success) {
+      //   // redirecting to home page
+      //   history.push("/");
+      //   // alert('welcome to home chef')
+      //   // if succuss calling user success action
+      //   return dispatch(userSignUpSuccess());
+      // } else {
+      //   // if err calling user failed action
+      //   return dispatch(userSignUpFailed(response.data.error));
+      // }
+    
   };
   return (
     // return jsx sign up page
     <LoginOrSignUpContainer onSubmit={onSubmitHandler}>
       <Heading>Sign Up</Heading>
+      {/* <ErrorMessage>
+        this error
+      </ErrorMessage> */}
+      {
+        error && alert(error)
+      }
       <LoginInput
         type="text"
         required

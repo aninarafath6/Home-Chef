@@ -1,4 +1,4 @@
-import { SIGNUP_REQUEST, SIGNUP_SUCCESS,SIGNUP_FAILED, LOGOUT } from "../types/auth-types";
+import { SIGNUP_REQUEST, SIGNUP_SUCCESS,SIGNUP_FAILED, LOGOUT, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILED } from "../types/auth-types";
 
 export const userSignUpRequest = () => {
   return {
@@ -16,6 +16,29 @@ export const userSignUpFailed = () => {
     type: SIGNUP_FAILED,
   };
 };
+
+
+
+
+
+export const userLoginRequest = () => {
+  return {
+    type: LOGIN_REQUEST,
+  };
+};
+
+export const userLoginSuccess = () => {
+  return {
+    type: LOGIN_SUCCESS,
+  };
+};
+export const userLoginFailed = () => {
+  return {
+    type: LOGIN_FAILED,
+  };
+};
+
+
 export const logout = () => {
   return {
     type: LOGOUT,

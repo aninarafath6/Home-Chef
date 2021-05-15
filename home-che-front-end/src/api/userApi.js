@@ -7,17 +7,19 @@ export const signUp = (payload) => {
       // calling sign up api
       let res = await axios.post("/api/auth/signUp", payload);
       // resolving success response
+      console.log(res);
       localStorage.setItem("home-token", res.data.token);
        
-      resolve(res.data);
-      if (res.success) {
-      } else {
-        // rejecting error response
-        reject(res.error);
-      }
+      resolve(res);
+      // if (res.data.success) {
+      // } else {
+      //   // rejecting error response
+      //   reject(res);
+      // }
     } catch (error) {
       // rejecting error response
-      reject(error);
+      // reject(error.message);
+      console.log(error);
     }
   });
 };
